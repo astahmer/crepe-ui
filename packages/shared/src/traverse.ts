@@ -1,36 +1,36 @@
-type AnyRecord = Record<string, any>
-type CallbackFn = (key: string, value: AnyRecord, path: string) => void
+type CallbackFn = (args: CallbackItem) => void
+type CallbackItem = { value: any; path: string; depth: number; parent: any[] | Record<string, unknown>; key: string }
 
-const isObjectOrArray = (obj: unknown) => typeof obj === 'object' && obj !== null
-
-const defaultOptions = { separator: '.' }
+export const isObjectOrArray = (obj: unknown) => typeof obj === 'object' && obj !== null
+const defaultOptions = { separator: '.', maxDepth: Infinity }
 
 export function traverse(
-  obj: AnyRecord,
+  obj: any,
   callback: CallbackFn,
-  options: { separator: string } = defaultOptions,
-  path = '',
+  options: { separator: string; maxDepth?: number } = defaultOptions,
 ): void {
+  const maxDepth = options.maxDepth ?? defaultOptions.maxDepth
   const separator = options.separator ?? defaultOptions.separator
 
-  // Check if the passed argument is an object or an array, and if the maximum depth has been reached
-  if (obj === null || typeof obj !== 'object') {
-    return
-  }
+  const stack: CallbackItem[] = [{ value: obj, path: '', depth: -1, parent: null as any, key: '' }]
 
-  const keys = Object.keys(obj)
+  while (stack.length > 0) {
+    const currentItem = stack.pop()!
 
-  for (let i = 0, len = keys.length; i < len; i++) {
-    const key = keys[i]
-    const value = obj[key]
-    const isObj = isObjectOrArray(value)
-    const newPath = path ? `${path}${separator}${key}` : key
+    // Call the callback function
+    if (currentItem.parent !== null) {
+      callback(currentItem)
+    }
 
-    callback(key, value, newPath)
-
-    // If the value is also an object or array, recurse into it
-    if (isObj) {
-      traverse(value, callback, options, newPath)
+    // If the value is an object or array and depth is within limits, push its properties to the stack
+    if (isObjectOrArray(currentItem.value) && currentItem.depth < maxDepth) {
+      const keys = Object.keys(currentItem.value)
+      for (let i = keys.length - 1; i >= 0; i--) {
+        const key = keys[i]
+        const value = currentItem.value[key]
+        const path = currentItem.path ? currentItem.path + separator + key : key
+        stack.push({ value, path, depth: currentItem.depth + 1, parent: currentItem.value, key })
+      }
     }
   }
 }

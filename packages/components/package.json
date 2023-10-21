@@ -11,10 +11,12 @@
         "default": "./dist/components.mjs"
       },
       "require": "./dist/components.js"
-    }
+    },
+    "./static.css": "./static.css"
   },
   "scripts": {
     "codegen": "cd ../preset-chakra && pnpm build && cd ../components && pnpm panda codegen",
+    "static": "panda cssgen static -o static.css -c panda.static.ts",
     "dev": "tsup --watch",
     "demo": "vite",
     "build": "tsup",

@@ -1,4 +1,4 @@
-import { Box, button, css, HStack, Stack, styled, Wrap, token } from '@pacha/styled-system'
+import { Box, button, css, HStack, Stack, styled, Wrap, token, Tokens } from '@pacha/styled-system'
 
 import {
   Alert,
@@ -6,7 +6,7 @@ import {
   Badge,
   Button,
   Card,
-  Checkbox as CheckboxRoot,
+  Checkbox,
   FormControl,
   Heading,
   Input,
@@ -30,7 +30,10 @@ import {
 
 import { useColorModeValue } from './color-mode'
 import { ColorModeSwitch } from './color-mode-switch'
+
 import '@pacha/preset-chakra/reset.css'
+import '../static.css'
+import { ToTokenRecord, assignInlineVars } from '@pacha/shared'
 
 export const Sandbox = () => {
   // console.log(getColorSchemeVars());
@@ -58,13 +61,27 @@ export const Sandbox = () => {
         </div> */}
         <button className={button({ variant: 'ghost' })}>btn ghost</button>
         <button className={button({ size: 'lg' })}>btn lg</button>
-        <Button colorPalette="teal">component</Button>
+        <Button colorPalette="teal">btn teal</Button>
         <Button colorPalette="teal" variant="ghost">
-          component
+          btn teal ghost
         </Button>
-        <Button colorPalette="blue" mr={3} css={{ color: 'amber.300' }}>
-          Close
+        <Button colorPalette="blue" mr={3}>
+          blue
         </Button>
+        <Button
+          colorPalette="blue"
+          mr={3}
+          style={assignInlineVars<ToTokenRecord<Tokens>>({
+            colors: {
+              'blue.500': 'red',
+              'blue.600': 'green',
+              white: 'yellow',
+            },
+          })}
+        >
+          assignInlineVars
+        </Button>
+
         <Badge colorPalette="green" variant="outline">
           Outline
         </Badge>
@@ -78,7 +95,7 @@ export const Sandbox = () => {
         <SwitchExample />
         <TagExample />
         <AlertExample />
-        {/* <AvatarExample /> */}
+        <AvatarExample />
         <CheckboxDemo />
         <InputDemo />
         <FormControlDemo />
@@ -93,6 +110,7 @@ export const Sandbox = () => {
         <TabsDemo variant="unstyled" />
         <TableDemo />
         <TooltipDemo />
+        <CardExample />
       </Wrap>
     </Stack>
   )
@@ -285,30 +303,30 @@ const CardExample = () => {
   )
 }
 
-const Checkbox = (props: CheckboxProps) => {
+const CheckboxField = (props: CheckboxProps) => {
   return (
-    <CheckboxRoot defaultChecked {...props}>
+    <Checkbox defaultChecked {...props}>
       {(state) => (
         <>
-          <CheckboxRoot.Control>
-            <CheckboxRoot.Icon isChecked={state.isChecked} isIndeterminate={state.isIndeterminate} />
-          </CheckboxRoot.Control>
-          <CheckboxRoot.Label>Label</CheckboxRoot.Label>
+          <Checkbox.Control>
+            <Checkbox.Icon isChecked={state.isChecked} isIndeterminate={state.isIndeterminate} />
+          </Checkbox.Control>
+          <Checkbox.Label>Label</Checkbox.Label>
         </>
       )}
-    </CheckboxRoot>
+    </Checkbox>
   )
 }
 
 const CheckboxDemo = () => {
   return (
     <Stack gap={3}>
-      <Checkbox size="sm" />
-      <Checkbox size="md" />
-      <Checkbox size="lg" />
-      <Checkbox colorPalette="teal" size="sm" />
-      <Checkbox colorPalette="teal" size="md" />
-      <Checkbox colorPalette="teal" size="lg" />
+      <CheckboxField size="sm" />
+      <CheckboxField size="md" />
+      <CheckboxField size="lg" />
+      <CheckboxField colorPalette="teal" size="sm" />
+      <CheckboxField colorPalette="teal" size="md" />
+      <CheckboxField colorPalette="teal" size="lg" />
     </Stack>
   )
 }

@@ -1,8 +1,7 @@
-import { type ComponentProps, forwardRef, type ReactNode } from 'react'
+import { forwardRef, type ComponentProps, type ReactNode } from 'react'
 
 import { ark } from '@ark-ui/react'
-import { styled } from '@pacha/styled-system'
-import { button, type ButtonVariantProps } from '@pacha/styled-system'
+import { button, css, cx, styled, type ButtonVariantProps } from '@pacha/styled-system'
 import { ButtonIcon } from './button-icon'
 
 // https://github.com/chakra-ui/chakra-ui/blob/f4b1ad66be1ada4b2728faef4c68a82a76f02532/packages/theme/src/components/button.ts
@@ -22,9 +21,11 @@ export interface ButtonProps extends StyleProps, Omit<ButtonVariantProps, 'color
  * @see Docs https://chakra-ui.com/docs/components/button
  * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/button/
  */
-export const Button = forwardRef<typeof ButtonRoot, ButtonProps>(({ children, leftIcon, ...props }, ref) => {
+export const Button = forwardRef<typeof ButtonRoot, ButtonProps>(({ children, leftIcon, className, ...props }, ref) => {
   return (
-    <ButtonRoot {...(props as any)} ref={ref}>
+    // Little trick to get the colorPalette prop to work
+    // While keeping the colorPalette used for the compoundVariants
+    <ButtonRoot {...(props as any)} className={cx(css({ colorPalette: props.colorPalette }), className)} ref={ref}>
       <ButtonContent leftIcon={leftIcon}>{children}</ButtonContent>
     </ButtonRoot>
   )

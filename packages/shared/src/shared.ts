@@ -1,3 +1,4 @@
+export * from './assign-inline-vars'
 export * from './color-mix'
 export * from './css-calc'
 export * from './css-var'

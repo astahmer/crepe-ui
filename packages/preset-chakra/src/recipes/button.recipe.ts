@@ -86,7 +86,9 @@ export const buttonRecipe = defineRecipe({
         p: '0',
       },
     },
-    colorPalette: {},
+    colorPalette: {
+      gray: {},
+    },
     size: {
       lg: { h: '12', minW: '12', fontSize: 'lg', px: '6' },
       md: { h: '10', minW: '10', fontSize: 'md', px: '4' },

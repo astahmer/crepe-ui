@@ -43,8 +43,9 @@ export const checkboxRecipe = defineSlotRecipe({
       transitionDuration: 'normal',
       border: '2px solid',
       borderRadius: 'sm',
-      borderColor: 'inherit',
+      // borderColor: 'inherit',
       color: 'white',
+      borderColor: { base: 'gray.200', _dark: 'whiteAlpha.300' },
 
       _checked: {
         bg: { base: 'colorPalette.500', _dark: 'colorPalette.200' },

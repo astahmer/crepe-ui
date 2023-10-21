@@ -9,6 +9,7 @@ export default defineConfig({
   // prefix: defaultConfig.prefix,
   // cssVarRoot: defaultConfig.cssVarRoot,
   presets: defaultConfig.presets,
+  // staticCss: defaultConfig.staticCss,
   // Whether to use css reset
   preflight: false,
 
@@ -33,4 +34,14 @@ export default defineConfig({
 
   // The JSX framework to use
   jsxFramework: 'react',
+
+  conditions: {
+    extend: {
+      dark: '.dark &, [data-theme="dark"] &',
+      light: '.light &, [data-theme="light"] &',
+    },
+  },
+  theme: {
+    extend: {},
+  },
 })

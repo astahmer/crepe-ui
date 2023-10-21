@@ -1,0 +1,51 @@
+{
+  "name": "@pacha/preset-chakra",
+  "version": "0.0.1",
+  "types": "./src/preset.ts",
+  "main": "./dist/preset.js",
+  "exports": {
+    ".": {
+      "source": "./src/preset.ts",
+      "types": "./dist/preset.d.ts",
+      "import": "./dist/preset.mjs",
+      "require": "./dist/preset.js"
+    },
+    "./vars": {
+      "source": "./src/vars.ts",
+      "types": "./dist/vars.d.ts",
+      "import": {
+        "types": "./dist/vars.d.mts",
+        "default": "./dist/vars.mjs"
+      },
+      "require": "./dist/vars.js"
+    },
+    "./reset.css": "./reset.css"
+  },
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "fmt": "prettier --write ./src ./tests",
+    "lint": "eslint --cache --fix ./src ./tests",
+    "publint": "publint"
+  },
+  "dependencies": {
+    "@ark-ui/anatomy": "^0.1.0",
+    "@pacha/shared": "workspace:^",
+    "@pandacss/dev": "^0.17.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "publint": "^0.2.5",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astahmer/pacha",
+    "directory": "packages/preset-chakra"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ]
+}

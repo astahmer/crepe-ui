@@ -1,0 +1,13 @@
+{
+  "name": "pacha",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r --filter=./packages/** build",
+    "fmt": "prettier --write ./'packages/*/src/**/*.{ts,tsx}'",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  }
+}

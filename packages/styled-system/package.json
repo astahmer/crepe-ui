@@ -1,0 +1,27 @@
+{
+  "name": "@pacha/styled-system",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./system.js",
+  "exports": {
+    ".": {
+      "types": "./system.d.ts",
+      "default": "./system.js"
+    }
+  },
+  "scripts": {
+    "fmt": "prettier --write ./src ./tests",
+    "lint": "eslint --cache --fix ./src ./tests",
+    "publint": "publint"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astahmer/pacha",
+    "directory": "packages/styled-system"
+  },
+  "sideEffects": false
+}

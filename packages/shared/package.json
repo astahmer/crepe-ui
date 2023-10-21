@@ -1,0 +1,39 @@
+{
+  "name": "@pacha/shared",
+  "version": "0.0.1",
+  "types": "./src/shared.ts",
+  "main": "./dist/shared.js",
+  "exports": {
+    ".": {
+      "source": "./src/shared.ts",
+      "types": "./dist/shared.d.ts",
+      "import": {
+        "types": "./dist/shared.d.mts",
+        "default": "./dist/shared.mjs"
+      },
+      "require": "./dist/shared.js"
+    }
+  },
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "fmt": "prettier --write ./src ./tests",
+    "lint": "eslint --cache --fix ./src ./tests",
+    "publint": "publint"
+  },
+  "devDependencies": {
+    "@pandacss/types": "^0.17.0",
+    "prettier": "^3.0.3",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astahmer/pacha",
+    "directory": "packages/shared"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ]
+}

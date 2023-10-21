@@ -1,0 +1,49 @@
+{
+  "name": "@pacha/color-mode",
+  "version": "0.0.1",
+  "types": "./src/color-mode.ts",
+  "main": "./dist/color-mode.js",
+  "exports": {
+    ".": {
+      "source": "./src/color-mode.ts",
+      "types": "./dist/color-mode.d.ts",
+      "import": {
+        "types": "./dist/color-mode.d.mts",
+        "default": "./dist/color-mode.mjs"
+      },
+      "require": "./dist/color-mode.js"
+    }
+  },
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "fmt": "prettier --write ./src ./tests",
+    "lint": "eslint --cache --fix ./src ./tests",
+    "publint": "publint"
+  },
+  "peerDependencies": {
+    "@ark-ui/react": ">=0.14.0",
+    "react": "^17.0.2 || ^18.2.0",
+    "react-dom": "^17.0.2 || ^18.2.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.31",
+    "@types/react-dom": "^18.2.14",
+    "prettier": "^3.0.3",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astahmer/pacha",
+    "directory": "packages/color-mode"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "name": "@pacha/components",
+  "version": "0.0.1",
+  "types": "./src/components.ts",
+  "exports": {
+    ".": {
+      "source": "./src/components.ts",
+      "types": "./dist/components.d.ts",
+      "import": {
+        "types": "./dist/components.d.mts",
+        "default": "./dist/components.mjs"
+      },
+      "require": "./dist/components.js"
+    }
+  },
+  "scripts": {
+    "codegen": "cd ../preset-chakra && pnpm build && cd ../components && pnpm panda codegen",
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "fmt": "prettier --write ./src ./tests",
+    "lint": "eslint --cache --fix ./src ./tests",
+    "tslint": "tsc --project tsconfig.json",
+    "publint": "publint"
+  },
+  "peerDependencies": {
+    "@ark-ui/react": ">=0.14.0",
+    "react": "^17.0.2 || ^18.2.0",
+    "react-dom": "^17.0.2 || ^18.2.0"
+  },
+  "dependencies": {
+    "@ark-ui/react": "^0.15.0",
+    "@pacha/preset-chakra": "workspace:^",
+    "@pacha/shared": "workspace:^",
+    "@pacha/styled-system": "workspace:^",
+    "@pandacss/dev": "^0.17.0",
+    "framer-motion": "^10.16.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.31",
+    "@types/react-dom": "^18.2.14",
+    "@zag-js/avatar": "^0.26.0",
+    "@zag-js/checkbox": "^0.26.0",
+    "@zag-js/presence": "^0.26.0",
+    "@zag-js/select": "^0.26.0",
+    "@zag-js/switch": "^0.26.0",
+    "@zag-js/tabs": "^0.26.0",
+    "prettier": "^3.0.3",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0",
+    "vite-plugin-dts": "^3.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astahmer/pacha",
+    "directory": "packages/components"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ]
+}

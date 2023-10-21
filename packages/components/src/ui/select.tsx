@@ -10,7 +10,6 @@ import { Optional } from './types'
 import { ComponentProps, ForwardRefExoticComponent } from 'react'
 import { Assign } from '@pacha/styled-system'
 import type { HTMLArkProps } from '@ark-ui/react'
-import { createThemeStyled } from './create-theme-styled'
 
 const { withProvider, withContext } = createStyleContext(select)
 
@@ -46,12 +45,9 @@ interface SelectItemGroupProps extends Assign<HTMLArkProps<'div'>, zag.ItemGroup
 interface SelectItemGroupLabelProps extends Assign<HTMLArkProps<'div'>, zag.ItemGroupLabelProps> {}
 
 // and that means we also have to cast this one
-const SelectRoot = createThemeStyled(
-  withProvider(
-    styled(Ark.Select.Root as ForwardRefExoticComponent<ComponentProps<'div'> & UseSelectProps<any>>),
-    'root',
-  ),
-  'Select',
+const SelectRoot = withProvider(
+  styled(Ark.Select.Root as ForwardRefExoticComponent<ComponentProps<'div'> & UseSelectProps<any>>),
+  'root',
 )
 
 const SelectClearTrigger = withContext(styled(Ark.Select.ClearTrigger), 'clearTrigger')
@@ -62,11 +58,13 @@ const SelectItem = withContext(
   'item',
 )
 const SelectItemGroup = withContext(
-  styled(Ark.Select.ItemGroup) as ForwardRefExoticComponent<ComponentProps<'div'> & SelectItemGroupProps>,
+  styled(Ark.Select.ItemGroup) as any as ForwardRefExoticComponent<ComponentProps<'div'> & SelectItemGroupProps>,
   'itemGroup',
 )
 const SelectItemGroupLabel = withContext(
-  styled(Ark.Select.ItemGroupLabel) as ForwardRefExoticComponent<ComponentProps<'div'> & SelectItemGroupLabelProps>,
+  styled(Ark.Select.ItemGroupLabel) as any as ForwardRefExoticComponent<
+    ComponentProps<'div'> & SelectItemGroupLabelProps
+  >,
   'itemGroupLabel',
 )
 const SelectItemIndicator = withContext(styled(Ark.Select.ItemIndicator), 'itemIndicator')

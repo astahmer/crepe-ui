@@ -16,11 +16,11 @@
   "scripts": {
     "codegen": "cd ../preset-chakra && pnpm build && cd ../components && pnpm panda codegen",
     "dev": "tsup --watch",
+    "demo": "vite",
     "build": "tsup",
     "fmt": "prettier --write ./src ./tests",
-    "lint": "eslint --cache --fix ./src ./tests",
     "tslint": "tsc --project tsconfig.json",
-    "publint": "publint"
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "@ark-ui/react": ">=0.14.0",
@@ -43,6 +43,7 @@
     "@zag-js/avatar": "^0.26.0",
     "@zag-js/checkbox": "^0.26.0",
     "@zag-js/presence": "^0.26.0",
+    "@zag-js/react": "^0.26.0",
     "@zag-js/select": "^0.26.0",
     "@zag-js/switch": "^0.26.0",
     "@zag-js/tabs": "^0.26.0",

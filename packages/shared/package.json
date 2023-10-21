@@ -17,9 +17,7 @@
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup",
-    "fmt": "prettier --write ./src ./tests",
-    "lint": "eslint --cache --fix ./src ./tests",
-    "publint": "publint"
+    "fmt": "prettier --write ./src ./tests"
   },
   "devDependencies": {
     "@pandacss/types": "^0.17.0",

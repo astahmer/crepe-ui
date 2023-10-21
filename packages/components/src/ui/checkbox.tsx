@@ -10,7 +10,6 @@ import type * as zag from '@zag-js/checkbox'
 import type { PropTypes } from '@zag-js/react'
 import { type Optional } from './types'
 import { Assign } from '@pacha/styled-system'
-import { createThemeStyled } from './create-theme-styled'
 
 const { withProvider, withContext } = createStyleContext(checkbox)
 
@@ -29,22 +28,20 @@ interface UseCheckboxProps extends Optional<zag.Context, 'id'> {
 }
 
 // and that means we also have to cast this one
-const CheckboxRoot = createThemeStyled(
-  withProvider(
-    styled(
-      Ark.Checkbox.Root as ForwardRefExoticComponent<
-        Assign<
-          ComponentProps<'label'> & UseCheckboxProps,
-          {
-            children?: ReactNode | ((pages: zag.Api<PropTypes>) => ReactNode)
-          }
-        >
-      >,
-    ),
-    'container',
+const CheckboxRoot = withProvider(
+  styled(
+    Ark.Checkbox.Root as ForwardRefExoticComponent<
+      Assign<
+        ComponentProps<'label'> & UseCheckboxProps,
+        {
+          children?: ReactNode | ((pages: zag.Api<PropTypes>) => ReactNode)
+        }
+      >
+    >,
   ),
-  'Checkbox',
+  'container',
 )
+
 const CheckboxControl = withContext(styled(Ark.Checkbox.Control), 'control')
 const CheckboxLabel = withContext(styled(Ark.Checkbox.Label), 'label')
 

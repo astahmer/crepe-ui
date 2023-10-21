@@ -29,14 +29,9 @@ const staticCss: StaticCssOptions = {
   },
 }
 
-const themeVarsClass = 'pacha-vars'
-const cssVarRoot = `:where(.${themeVarsClass})`
-
 export const defaultConfig = {
-  // themeVarsClass,
   // prefix: 'p',
-  // cssVarRoot,
-  extendCssVarRoot: (root: string) => cssVarRoot.replace(')', `, ${root})`),
+  cssVarRoot: '',
   staticCss,
   presets: ['@pandacss/preset-panda', '@pacha/preset-chakra'],
 }

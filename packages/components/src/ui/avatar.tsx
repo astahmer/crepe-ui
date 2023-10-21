@@ -7,7 +7,6 @@ import { PreferRight } from '@pacha/shared'
 import { ComponentProps, ForwardRefExoticComponent } from 'react'
 import type * as zag from '@zag-js/avatar'
 import { type Optional } from './types'
-import { createThemeStyled } from './create-theme-styled'
 
 const { withProvider, withContext } = createStyleContext(avatar)
 
@@ -24,9 +23,9 @@ export interface AvatarProps extends JsxProps, AvatarVariantProps {}
 interface UseAvatarProps extends Optional<zag.Context, 'id'> {}
 
 // and that means we also have to cast this one
-const AvatarRoot = createThemeStyled(
-  withProvider(styled(Ark.Avatar.Root as ForwardRefExoticComponent<ComponentProps<'div'> & UseAvatarProps>), 'root'),
-  'Avatar',
+const AvatarRoot = withProvider(
+  styled(Ark.Avatar.Root as ForwardRefExoticComponent<ComponentProps<'div'> & UseAvatarProps>),
+  'root',
 )
 
 const AvatarFallback = withContext(styled(Ark.Avatar.Fallback), 'fallback')

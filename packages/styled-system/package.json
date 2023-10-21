@@ -10,9 +10,7 @@
     }
   },
   "scripts": {
-    "fmt": "prettier --write ./src ./tests",
-    "lint": "eslint --cache --fix ./src ./tests",
-    "publint": "publint"
+    "fmt": "prettier --write ./src ./tests"
   },
   "devDependencies": {
     "prettier": "^3.0.3",

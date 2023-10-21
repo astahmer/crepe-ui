@@ -1,8 +1,6 @@
-'use client'
 // @ts-nocheck
 
 /** Adapted from https://github.com/pacocoursey/next-themes/blob/a385b8d865bbb317ff73a5b6c1319ae566f7d6f1/src/index.tsx */
-/* eslint-disable */
 
 import { createContext, Fragment, memo, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import type { ColorModeProviderProps, UseColorModeProps } from './color-mode-types'

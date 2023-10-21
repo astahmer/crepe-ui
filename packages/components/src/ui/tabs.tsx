@@ -10,7 +10,6 @@ import type * as zag from '@zag-js/tabs'
 import { type Optional } from './types'
 import type { HTMLArkProps } from '@ark-ui/react'
 import { Assign } from '@pacha/styled-system'
-import { createThemeStyled } from './create-theme-styled'
 
 const { withProvider, withContext } = createStyleContext(tabs)
 
@@ -54,10 +53,11 @@ interface TabContentProps extends InnerTabContentProps, Omit<TabPresenceProps, '
 
 interface TabTriggerProps extends Assign<HTMLArkProps<'button'>, zag.TriggerProps> {}
 
-const TabsRoot = createThemeStyled(
-  withProvider(styled(Ark.Tabs.Root as ForwardRefExoticComponent<ComponentProps<'div'> & UseTabsProps>), 'root'),
-  'Tabs',
+const TabsRoot = withProvider(
+  styled(Ark.Tabs.Root as ForwardRefExoticComponent<ComponentProps<'div'> & UseTabsProps>),
+  'root',
 )
+
 const TabContent = withContext(
   styled(Ark.Tabs.Content as ForwardRefExoticComponent<ComponentProps<'div'> & TabContentProps>),
   'content',

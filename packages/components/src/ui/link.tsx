@@ -1,9 +1,8 @@
 import { ComponentPropsWithoutRef, forwardRef } from 'react'
 import { styled } from '@pacha/styled-system'
 import { CheckboxVariantProps, link } from '@pacha/styled-system'
-import { createThemeStyled } from './create-theme-styled'
 
-const LinkRoot = createThemeStyled(styled('a', link), 'Link')
+const LinkRoot = styled('a', link)
 
 interface StyleProps extends ComponentPropsWithoutRef<typeof LinkRoot> {}
 

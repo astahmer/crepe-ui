@@ -2,7 +2,6 @@ import { cssVariables } from '@pacha/preset-chakra/vars'
 import { HTMLStyledProps, styled } from '@pacha/styled-system'
 import { SkeletonVariantProps, skeleton } from '@pacha/styled-system'
 import { forwardRef } from 'react'
-import { createThemeStyled } from './create-theme-styled'
 
 export interface SkeletonProps extends SkeletonVariantProps, HTMLStyledProps<'div'> {
   startColor?: string
@@ -16,8 +15,8 @@ const SkeletonRoot = styled('div', skeleton)
  *
  * @see Docs https://chakra-ui.com/docs/components/skeleton
  */
-export const Skeleton = createThemeStyled(
-  forwardRef<typeof SkeletonRoot, SkeletonProps>(({ children, startColor, endColor, style, ...props }, ref) => {
+export const Skeleton = forwardRef<typeof SkeletonRoot, SkeletonProps>(
+  ({ children, startColor, endColor, style, ...props }, ref) => {
     return (
       <SkeletonRoot
         {...props}
@@ -33,6 +32,5 @@ export const Skeleton = createThemeStyled(
         {children}
       </SkeletonRoot>
     )
-  }),
-  'Skeleton',
+  },
 )

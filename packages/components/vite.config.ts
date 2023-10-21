@@ -13,12 +13,13 @@ export default defineConfig({
   build: {
     minify: true,
     lib: {
-      entry: 'src/components.tsx',
+      entry: 'src/components.ts',
       fileName: 'index',
       formats: ['es', 'cjs'],
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      // external: ['react', 'react-dom'],
+      external: ['@pacha/styled-system', 'react', 'react-dom', '@ark-ui/react'],
     },
   },
 })

@@ -3,7 +3,6 @@ import { HTMLStyledProps, styled } from '@pacha/styled-system'
 import { createStyleContext } from './create-style-context'
 import { PreferRight } from '@pacha/shared'
 import { table, TableVariantProps } from '@pacha/styled-system'
-import { createThemeStyled } from './create-theme-styled'
 
 const { withProvider, withContext } = createStyleContext(table)
 
@@ -12,8 +11,8 @@ interface JsxProps extends PreferRight<ComponentPropsWithoutRef<'div'>, StylePro
 
 export interface TableProps extends JsxProps, TableVariantProps {}
 
-const TableContainer = createThemeStyled(withProvider(styled('div'), 'container'), 'Table')
-const TableRoot = createThemeStyled(withProvider(styled('table'), 'table'), 'Table')
+const TableContainer = withProvider(styled('div'), 'container')
+const TableRoot = withProvider(styled('table'), 'table')
 
 const TableBody = withContext(styled('tbody'), 'tbody')
 const TableCaption = withContext(styled('caption'), 'caption')

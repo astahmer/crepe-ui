@@ -4,11 +4,10 @@ import { styled } from '@pacha/styled-system'
 import { alert } from '@pacha/styled-system'
 import type { SystemStyleObject } from '@pacha/styled-system'
 import { createStyleContext } from './create-style-context'
-import { createThemeStyled } from './create-theme-styled'
 
 const { withProvider, withContext } = createStyleContext(alert)
 
-const AlertRoot = createThemeStyled(withProvider(styled('div'), 'container'), 'Alert')
+const AlertRoot = withProvider(styled('div'), 'container')
 const AlertIcon = withContext(styled('div'), 'icon')
 
 interface IconProps extends ComponentPropsWithoutRef<'svg'> {

@@ -7,7 +7,6 @@ import { PreferRight } from '@pacha/shared'
 import type * as zag from '@zag-js/switch'
 import { Optional } from './types'
 import { ComponentProps, ForwardRefExoticComponent } from 'react'
-import { createThemeStyled } from './create-theme-styled'
 
 const { withProvider, withContext } = createStyleContext(switchRecipe)
 
@@ -29,9 +28,9 @@ export interface UseSwitchProps extends Optional<zag.Context, 'id'> {
 interface UseAvatarProps extends Optional<zag.Context, 'id'> {}
 
 // and that means we also have to cast this one
-const SwitchRoot = createThemeStyled(
-  withProvider(styled(Ark.Switch.Root as ForwardRefExoticComponent<ComponentProps<'label'> & UseAvatarProps>), 'root'),
-  'Switch',
+const SwitchRoot = withProvider(
+  styled(Ark.Switch.Root as ForwardRefExoticComponent<ComponentProps<'label'> & UseAvatarProps>),
+  'root',
 )
 
 const SwitchControl = withContext(styled(Ark.Switch.Control), 'control')

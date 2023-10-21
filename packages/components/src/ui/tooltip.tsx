@@ -3,7 +3,6 @@ import { PreferRight } from '@pacha/shared'
 import { HTMLStyledProps, styled } from '@pacha/styled-system'
 import { TooltipVariantProps, tooltip } from '@pacha/styled-system'
 import { createStyleContext } from './create-style-context'
-import { createThemeStyled } from './create-theme-styled'
 
 const { withProvider, withContext } = createStyleContext(tooltip)
 
@@ -13,7 +12,7 @@ interface JsxProps extends PreferRight<Ark.TooltipProps, StyleProps> {}
 
 export interface TooltipProps extends JsxProps, TooltipVariantProps {}
 
-const TooltipRoot = createThemeStyled(withProvider(styled(Ark.Tooltip.Root)), 'Tooltip')
+const TooltipRoot = withProvider(styled(Ark.Tooltip.Root))
 const TooltipArrow = withContext(styled(Ark.Tooltip.Arrow), 'arrow')
 const TooltipArrowTip = withContext(styled(Ark.Tooltip.ArrowTip), 'arrowTip')
 const TooltipContent = withContext(styled(Ark.Tooltip.Content), 'content')

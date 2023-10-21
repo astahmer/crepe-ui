@@ -1,5 +1,3 @@
-'use client'
-
 export * from './ui/alert'
 export * from './ui/avatar'
 export * from './ui/badge'
@@ -11,7 +9,6 @@ export * from './ui/code'
 export * from './ui/collapse'
 export * from './ui/context'
 export * from './ui/create-style-context'
-export * from './ui/create-theme-styled'
 export * from './ui/form-control'
 export * from './ui/heading'
 export * from './ui/icon'

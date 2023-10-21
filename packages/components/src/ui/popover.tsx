@@ -3,7 +3,6 @@ import { PreferRight } from '@pacha/shared'
 import { HTMLStyledProps, styled } from '@pacha/styled-system'
 import { popover } from '@pacha/styled-system'
 import { createStyleContext } from './create-style-context'
-import { createThemeStyled } from './create-theme-styled'
 
 const { withProvider, withContext } = createStyleContext(popover)
 
@@ -13,7 +12,7 @@ interface JsxProps extends PreferRight<Ark.PopoverProps, StyleProps> {}
 
 export interface PopoverProps extends JsxProps {}
 
-const PopoverRoot = createThemeStyled(withProvider(styled(Ark.Popover.Root)), 'Popover')
+const PopoverRoot = withProvider(styled(Ark.Popover.Root))
 const PopoverAnchor = withContext(styled(Ark.Popover.Anchor), 'anchor')
 const PopoverArrow = withContext(styled(Ark.Popover.Arrow), 'arrow')
 const PopoverArrowTip = withContext(styled(Ark.Popover.ArrowTip), 'arrowTip')

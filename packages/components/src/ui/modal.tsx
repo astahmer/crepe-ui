@@ -5,7 +5,6 @@ import { createStyleContext } from './create-style-context'
 import { PreferRight } from '@pacha/shared'
 import { ForwardRefExoticComponent, forwardRef } from 'react'
 import { DialogDescriptionProps } from '@ark-ui/react/dialog'
-import { createThemeStyled } from './create-theme-styled'
 
 const { withProvider, withContext } = createStyleContext(modal)
 
@@ -16,7 +15,7 @@ interface JsxProps extends PreferRight<Ark.DialogProps, StyleProps> {}
 
 export interface ModalProps extends JsxProps, ModalVariantProps {}
 
-const DialogRoot = createThemeStyled(withProvider(styled(Ark.Dialog.Root), 'root'), 'Modal')
+const DialogRoot = withProvider(styled(Ark.Dialog.Root), 'root')
 const DialogBackdrop = withContext(styled(Ark.Dialog.Backdrop), 'backdrop')
 const DialogCloseTrigger = withContext(
   // TODO recipe extension

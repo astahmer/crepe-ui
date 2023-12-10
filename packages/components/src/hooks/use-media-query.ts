@@ -2,8 +2,8 @@ import { useCallback, useEffect, useState } from 'react'
 // https://github.com/chakra-ui/chakra-ui/blob/f4b1ad66be1ada4b2728faef4c68a82a76f02532/packages/components/src/media-query/use-media-query.ts
 
 export type UseMediaQueryOptions = {
-  fallback?: boolean | boolean[]
-  ssr?: boolean
+	fallback?: boolean | boolean[]
+	ssr?: boolean
 }
 
 /**
@@ -15,60 +15,60 @@ export type UseMediaQueryOptions = {
  * @see Docs https://chakra-ui.com/docs/hooks/use-media-query
  */
 export function useMediaQuery(query: string | string[], options: UseMediaQueryOptions = {}): boolean[] {
-  const { ssr = true, fallback } = options
+	const { ssr = true, fallback } = options
 
-  const getWindow = useCallback(() => window, [])
-  const queries = Array.isArray(query) ? query : [query]
+	const getWindow = useCallback(() => window, [])
+	const queries = Array.isArray(query) ? query : [query]
 
-  let fallbackValues = Array.isArray(fallback) ? fallback : [fallback]
-  fallbackValues = fallbackValues.filter((v) => v != null) as boolean[]
+	let fallbackValues = Array.isArray(fallback) ? fallback : [fallback]
+	fallbackValues = fallbackValues.filter((v) => v != null) as boolean[]
 
-  const [value, setValue] = useState(() => {
-    return queries.map((query, index) => ({
-      media: query,
-      matches: ssr ? !!fallbackValues[index] : getWindow().matchMedia(query).matches,
-    }))
-  })
+	const [value, setValue] = useState(() => {
+		return queries.map((query, index) => ({
+			media: query,
+			matches: ssr ? !!fallbackValues[index] : getWindow().matchMedia(query).matches,
+		}))
+	})
 
-  useEffect(() => {
-    const win = getWindow()
-    setValue(
-      queries.map((query) => ({
-        media: query,
-        matches: win.matchMedia(query).matches,
-      })),
-    )
+	useEffect(() => {
+		const win = getWindow()
+		setValue(
+			queries.map((query) => ({
+				media: query,
+				matches: win.matchMedia(query).matches,
+			})),
+		)
 
-    const mql = queries.map((query) => win.matchMedia(query))
+		const mql = queries.map((query) => win.matchMedia(query))
 
-    const handler = (evt: MediaQueryListEvent) => {
-      setValue((prev) => {
-        return prev.slice().map((item) => {
-          if (item.media === evt.media) return { ...item, matches: evt.matches }
-          return item
-        })
-      })
-    }
+		const handler = (evt: MediaQueryListEvent) => {
+			setValue((prev) => {
+				return prev.slice().map((item) => {
+					if (item.media === evt.media) return { ...item, matches: evt.matches }
+					return item
+				})
+			})
+		}
 
-    mql.forEach((mql) => {
-      if (typeof mql.addListener === 'function') {
-        mql.addListener(handler)
-      } else {
-        mql.addEventListener('change', handler)
-      }
-    })
+		mql.forEach((mql) => {
+			if (typeof mql.addListener === 'function') {
+				mql.addListener(handler)
+			} else {
+				mql.addEventListener('change', handler)
+			}
+		})
 
-    return () => {
-      mql.forEach((mql) => {
-        if (typeof mql.removeListener === 'function') {
-          mql.removeListener(handler)
-        } else {
-          mql.removeEventListener('change', handler)
-        }
-      })
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [getWindow])
+		return () => {
+			mql.forEach((mql) => {
+				if (typeof mql.removeListener === 'function') {
+					mql.removeListener(handler)
+				} else {
+					mql.removeEventListener('change', handler)
+				}
+			})
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [getWindow])
 
-  return value.map((item) => item.matches)
+	return value.map((item) => item.matches)
 }

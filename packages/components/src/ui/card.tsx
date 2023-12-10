@@ -1,5 +1,5 @@
-import { styled } from '@pacha/styled-system'
-import { card } from '@pacha/styled-system'
+import { styled } from '@pacha/styled-system/jsx'
+import { card } from '@pacha/styled-system/recipes'
 import { createStyleContext } from './create-style-context'
 
 const { withProvider, withContext } = createStyleContext(card)
@@ -10,8 +10,8 @@ const CardHeader = withContext(styled('div'), 'header')
 const CardFooter = withContext(styled('div'), 'footer')
 
 export const Card = Object.assign(CardRoot, {
-  Root: CardRoot,
-  Body: CardBody,
-  Header: CardHeader,
-  Footer: CardFooter,
+	Root: CardRoot,
+	Body: CardBody,
+	Header: CardHeader,
+	Footer: CardFooter,
 })

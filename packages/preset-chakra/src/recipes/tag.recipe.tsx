@@ -9,57 +9,57 @@ import { badgeRecipe, badgeVars } from './badge.recipe'
 const vars = cssVar.scope('tag', ['bg', 'color', 'shadow', 'min-height', 'min-width', 'font-size', 'padding-inline'])
 
 export const tagRecipe = defineRecipe({
-  className: 'tag',
-  base: {
-    colorPalette: 'gray',
-    fontWeight: 'medium',
-    lineHeight: 1.2,
-    outline: 0,
-    [vars.color.name]: badgeVars.color.ref,
-    [vars.bg.name]: badgeVars.bg.ref,
-    [vars.shadow.name]: badgeVars.shadow.ref,
-    color: vars.color.ref,
-    bg: vars.bg.ref,
-    boxShadow: vars.shadow.ref,
-    borderRadius: 'md',
-    minH: vars['min-height'].ref,
-    minW: vars['min-width'].ref,
-    fontSize: vars['font-size'].ref,
-    px: vars['padding-inline'].ref,
-    _focusVisible: {
-      [vars.shadow.name]: 'shadows.outline',
-    },
-    //
-    display: 'inline-flex',
-    verticalAlign: 'top',
-    alignItems: 'center',
-    maxWidth: '100%',
-  },
-  variants: {
-    variant: badgeRecipe.variants?.variant ?? {},
-    size: {
-      sm: {
-        [vars['min-height'].name]: 'sizes.5',
-        [vars['min-width'].name]: 'sizes.5',
-        [vars['font-size'].name]: 'fontSizes.xs',
-        [vars['padding-inline'].name]: 'space.2',
-      },
-      md: {
-        [vars['min-height'].name]: 'sizes.6',
-        [vars['min-width'].name]: 'sizes.6',
-        [vars['font-size'].name]: 'fontSizes.sm',
-        [vars['padding-inline'].name]: 'space.2',
-      },
-      lg: {
-        [vars['min-height'].name]: 'sizes.8',
-        [vars['min-width'].name]: 'sizes.8',
-        [vars['font-size'].name]: 'fontSizes.md',
-        [vars['padding-inline'].name]: 'space.3',
-      },
-    },
-  },
-  defaultVariants: {
-    size: 'md',
-    variant: 'subtle',
-  },
+	className: 'tag',
+	base: {
+		colorPalette: 'gray',
+		fontWeight: 'medium',
+		lineHeight: 1.2,
+		outline: 0,
+		[vars.color.name]: badgeVars.color.ref,
+		[vars.bg.name]: badgeVars.bg.ref,
+		[vars.shadow.name]: badgeVars.shadow.ref,
+		color: vars.color.ref,
+		bg: vars.bg.ref,
+		boxShadow: vars.shadow.ref,
+		borderRadius: 'md',
+		minH: vars['min-height'].ref,
+		minW: vars['min-width'].ref,
+		fontSize: vars['font-size'].ref,
+		px: vars['padding-inline'].ref,
+		_focusVisible: {
+			[vars.shadow.name]: 'shadows.outline',
+		},
+		//
+		display: 'inline-flex',
+		verticalAlign: 'top',
+		alignItems: 'center',
+		maxWidth: '100%',
+	},
+	variants: {
+		variant: badgeRecipe.variants?.variant ?? {},
+		size: {
+			sm: {
+				[vars['min-height'].name]: 'sizes.5',
+				[vars['min-width'].name]: 'sizes.5',
+				[vars['font-size'].name]: 'fontSizes.xs',
+				[vars['padding-inline'].name]: 'space.2',
+			},
+			md: {
+				[vars['min-height'].name]: 'sizes.6',
+				[vars['min-width'].name]: 'sizes.6',
+				[vars['font-size'].name]: 'fontSizes.sm',
+				[vars['padding-inline'].name]: 'space.2',
+			},
+			lg: {
+				[vars['min-height'].name]: 'sizes.8',
+				[vars['min-width'].name]: 'sizes.8',
+				[vars['font-size'].name]: 'fontSizes.md',
+				[vars['padding-inline'].name]: 'space.3',
+			},
+		},
+	},
+	defaultVariants: {
+		size: 'md',
+		variant: 'subtle',
+	},
 })

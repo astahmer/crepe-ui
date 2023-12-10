@@ -14,14 +14,11 @@ export default defineConfig({
 	// Whether to use css reset
 	preflight: false,
 
-	// Where to look for your css declarations
-	// Since we don't care about the CSS generation here, we can skip including any files
-	include: ['demo/**/*'],
-
 	// The output directory for your css system
 	// using the same `@pacha/styled-system` acrosss all packages
 	// and by marking it as `external` in the `tsup.config.ts`
 	// will make all packages use the same `styled-system` runtime
+	outdir: 'styled-system',
 	importMap: '@pacha/styled-system',
 
 	// The JSX framework to use

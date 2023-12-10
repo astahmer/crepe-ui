@@ -4,9 +4,9 @@ import { Sandbox } from './sandbox'
 import { ColorModeProvider } from './color-mode'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <ColorModeProvider>
-      <Sandbox />
-    </ColorModeProvider>
-  </React.StrictMode>,
+	<React.StrictMode>
+		<ColorModeProvider>
+			<Sandbox />
+		</ColorModeProvider>
+	</React.StrictMode>,
 )

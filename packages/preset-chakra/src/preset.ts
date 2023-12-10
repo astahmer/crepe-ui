@@ -10,18 +10,18 @@ import { textStyles } from './text-styles'
 import { generatePreflight } from './preflight'
 
 export default definePreset({
-  globalCss: globalStyles,
-  utilities,
-  conditions,
-  theme: {
-    extend: {
-      semanticTokens,
-      tokens,
-      recipes: chakraRecipes,
-      keyframes,
-      textStyles,
-    },
-  },
+	globalCss: globalStyles,
+	utilities,
+	conditions,
+	theme: {
+		extend: {
+			semanticTokens,
+			tokens,
+			recipes: chakraRecipes,
+			keyframes,
+			textStyles,
+		},
+	},
 })
 
 export { chakraRecipes, generatePreflight }

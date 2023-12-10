@@ -12,6 +12,8 @@ Updating the `packages/preset-chakra` will trigger a `static.css` file generatio
 
 ## TODO
 
+- rename to @pacha-ui
+
 - update Ark-UI and remove all the pasted UseXXXProps types when v1 is released
 
 - create other frameworks implementation, only the React one is done

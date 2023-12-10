@@ -8,39 +8,39 @@ import { useEffect, useLayoutEffect } from 'react'
 const useSafeLayoutEffect = typeof document !== 'undefined' ? useLayoutEffect : useEffect
 
 export interface PortalProps {
-  children: React.ReactNode
-  target?: React.RefObject<HTMLElement>
-  tag?: string
-  host?: HTMLElement | null
+	children: React.ReactNode
+	target?: React.RefObject<HTMLElement>
+	tag?: string
+	host?: HTMLElement | null
 }
 
 export function Portal(props: PortalProps): JSX.Element {
-  const { children, target, tag, host: hostProp } = props
-  const node = useRef<HTMLDivElement | null>(null)
-  const portalNode = useRef<HTMLElement | null>(null)
-  const [, forceUpdate] = useReducer((s) => s + 1, 0)
+	const { children, target, tag, host: hostProp } = props
+	const node = useRef<HTMLDivElement | null>(null)
+	const portalNode = useRef<HTMLElement | null>(null)
+	const [, forceUpdate] = useReducer((s) => s + 1, 0)
 
-  useSafeLayoutEffect(() => {
-    if (!node.current) return
-    const doc = node.current.ownerDocument
-    const host = hostProp ?? doc.body
-    portalNode.current = doc.createElement(tag ?? 'pacha-portal')
-    host.appendChild(portalNode.current)
+	useSafeLayoutEffect(() => {
+		if (!node.current) return
+		const doc = node.current.ownerDocument
+		const host = hostProp ?? doc.body
+		portalNode.current = doc.createElement(tag ?? 'pacha-portal')
+		host.appendChild(portalNode.current)
 
-    forceUpdate()
+		forceUpdate()
 
-    return () => {
-      if (portalNode.current) {
-        host.removeChild(portalNode.current)
-      }
-    }
-  }, [])
+		return () => {
+			if (portalNode.current) {
+				host.removeChild(portalNode.current)
+			}
+		}
+	}, [])
 
-  const targetNode = target?.current ?? portalNode.current
+	const targetNode = target?.current ?? portalNode.current
 
-  if (targetNode) {
-    return createPortal(children as any, targetNode)
-  }
+	if (targetNode) {
+		return createPortal(children as any, targetNode)
+	}
 
-  return createElement('span', { ref: node })
+	return createElement('span', { ref: node })
 }

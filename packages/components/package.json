@@ -15,12 +15,10 @@
     "./static.css": "./static.css"
   },
   "scripts": {
-    "prepare": "cd ../preset-chakra && pnpm build && cd ../components && pnpm panda codegen",
     "static": "panda cssgen static -o static.css -c panda.static.ts",
     "dev": "tsup --watch",
     "demo": "vite",
     "build": "tsup",
-    "fmt": "prettier --write ./src ./tests",
     "tslint": "tsc --project tsconfig.json",
     "typecheck": "tsc --noEmit"
   },
@@ -34,7 +32,7 @@
     "@pacha/preset-chakra": "workspace:^",
     "@pacha/shared": "workspace:^",
     "@pacha/styled-system": "workspace:^",
-    "@pandacss/dev": "^0.17.0",
+    "@pandacss/dev": "^0.21.0",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -49,7 +47,6 @@
     "@zag-js/select": "^0.26.0",
     "@zag-js/switch": "^0.26.0",
     "@zag-js/tabs": "^0.26.0",
-    "prettier": "^3.0.3",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",

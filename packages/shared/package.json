@@ -16,12 +16,10 @@
   },
   "scripts": {
     "dev": "tsup --watch",
-    "build": "tsup",
-    "fmt": "prettier --write ./src ./tests"
+    "build": "tsup"
   },
   "devDependencies": {
-    "@pandacss/types": "^0.17.0",
-    "prettier": "^3.0.3",
+    "@pandacss/types": "^0.21.0",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2"
   },

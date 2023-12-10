@@ -33,7 +33,7 @@ const vhPolyfill = css`
 `
 
 export const generatePreflight = (scope: string, layer = 'reset') => {
-  return css`
+	return css`
     @layer ${layer} {
       html {
         line-height: 1.5;

@@ -1,8 +1,8 @@
 import type { ComponentPropsWithoutRef } from 'react'
-import { HTMLStyledProps, styled } from '@pacha/styled-system'
+import { HTMLStyledProps, styled } from '@pacha/styled-system/jsx'
 import { createStyleContext } from './create-style-context'
 import { PreferRight } from '@pacha/shared'
-import { table, TableVariantProps } from '@pacha/styled-system'
+import { table, TableVariantProps } from '@pacha/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(table)
 
@@ -23,14 +23,14 @@ const TableHeader = withContext(styled('thead'), 'thead')
 const TableRow = withContext(styled('tr'), 'tr')
 
 export const Table = Object.assign(TableRoot, {
-  Container: TableContainer,
-  Table: TableRoot,
-  Root: withContext(styled('table'), 'table'),
-  Body: TableBody,
-  Caption: TableCaption,
-  Cell: TableCell,
-  Footer: TableFooter,
-  Head: TableHead,
-  Header: TableHeader,
-  Row: TableRow,
+	Container: TableContainer,
+	Table: TableRoot,
+	Root: withContext(styled('table'), 'table'),
+	Body: TableBody,
+	Caption: TableCaption,
+	Cell: TableCell,
+	Footer: TableFooter,
+	Head: TableHead,
+	Header: TableHeader,
+	Row: TableRow,
 })

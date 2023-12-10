@@ -1,6 +1,6 @@
 import { ComponentProps, forwardRef } from 'react'
-import { HTMLStyledProps, styled } from '@pacha/styled-system'
-import { TextareaVariantProps, textarea } from '@pacha/styled-system'
+import { HTMLStyledProps, styled } from '@pacha/styled-system/jsx'
+import { TextareaVariantProps, textarea } from '@pacha/styled-system/recipes'
 import { useFormControl } from './use-form-control'
 import { PreferRight } from '@pacha/shared'
 import { FormControlOptions } from './form-control-context'
@@ -13,8 +13,8 @@ export interface TextareaProps extends Omit<JsxProps, 'size'>, TextareaVariantPr
 
 const StyledTextarea = styled(ark.textarea, textarea)
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function Textarea(props, ref) {
-  const fieldProps = useFormControl<HTMLTextAreaElement>(props)
+	const fieldProps = useFormControl<HTMLTextAreaElement>(props)
 
-  return <StyledTextarea ref={ref as never} {...fieldProps} />
+	return <StyledTextarea ref={ref as never} {...fieldProps} />
 })
 Textarea.displayName = 'Textarea'

@@ -1,7 +1,7 @@
 import * as Ark from '@ark-ui/react/popover'
 import { PreferRight } from '@pacha/shared'
-import { HTMLStyledProps, styled } from '@pacha/styled-system'
-import { popover } from '@pacha/styled-system'
+import { HTMLStyledProps, styled } from '@pacha/styled-system/jsx'
+import { popover } from '@pacha/styled-system/recipes'
 import { createStyleContext } from './create-style-context'
 
 const { withProvider, withContext } = createStyleContext(popover)
@@ -25,15 +25,15 @@ const PopoverTitle = withContext(styled(Ark.Popover.Title), 'title')
 const PopoverTrigger = withContext(styled(Ark.Popover.Trigger), 'trigger')
 
 export const Popover = Object.assign(PopoverRoot, {
-  Root: PopoverRoot,
-  Anchor: PopoverAnchor,
-  Arrow: PopoverArrow,
-  ArrowTip: PopoverArrowTip,
-  CloseTrigger: PopoverCloseTrigger,
-  Content: PopoverContent,
-  Description: PopoverDescription,
-  Footer: PopoverFooter,
-  Positioner: PopoverPositioner,
-  Title: PopoverTitle,
-  Trigger: PopoverTrigger,
+	Root: PopoverRoot,
+	Anchor: PopoverAnchor,
+	Arrow: PopoverArrow,
+	ArrowTip: PopoverArrowTip,
+	CloseTrigger: PopoverCloseTrigger,
+	Content: PopoverContent,
+	Description: PopoverDescription,
+	Footer: PopoverFooter,
+	Positioner: PopoverPositioner,
+	Title: PopoverTitle,
+	Trigger: PopoverTrigger,
 })

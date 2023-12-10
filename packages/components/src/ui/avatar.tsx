@@ -1,6 +1,6 @@
 import * as Ark from '@ark-ui/react/avatar'
-import { HTMLStyledProps, styled } from '@pacha/styled-system'
-import { avatar, type AvatarVariantProps } from '@pacha/styled-system'
+import { HTMLStyledProps, styled } from '@pacha/styled-system/jsx'
+import { avatar, type AvatarVariantProps } from '@pacha/styled-system/recipes'
 import { createStyleContext } from './create-style-context'
 import { PreferRight } from '@pacha/shared'
 
@@ -24,15 +24,15 @@ interface UseAvatarProps extends Optional<zag.Context, 'id'> {}
 
 // and that means we also have to cast this one
 const AvatarRoot = withProvider(
-  styled(Ark.Avatar.Root as ForwardRefExoticComponent<ComponentProps<'div'> & UseAvatarProps>),
-  'root',
+	styled(Ark.Avatar.Root as ForwardRefExoticComponent<ComponentProps<'div'> & UseAvatarProps>),
+	'root',
 )
 
 const AvatarFallback = withContext(styled(Ark.Avatar.Fallback), 'fallback')
 const AvatarImage = withContext(styled(Ark.Avatar.Image), 'image')
 
 export const Avatar = Object.assign(AvatarRoot, {
-  Root: AvatarRoot,
-  Fallback: AvatarFallback,
-  Image: AvatarImage,
+	Root: AvatarRoot,
+	Fallback: AvatarFallback,
+	Image: AvatarImage,
 })

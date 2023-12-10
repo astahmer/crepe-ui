@@ -16,8 +16,7 @@
   },
   "scripts": {
     "dev": "tsup --watch",
-    "build": "tsup",
-    "fmt": "prettier --write ./src ./tests"
+    "build": "tsup"
   },
   "peerDependencies": {
     "@ark-ui/react": ">=0.14.0",
@@ -31,7 +30,6 @@
   "devDependencies": {
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
-    "prettier": "^3.0.3",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2"
   },

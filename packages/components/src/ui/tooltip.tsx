@@ -1,7 +1,7 @@
 import * as Ark from '@ark-ui/react/tooltip'
 import { PreferRight } from '@pacha/shared'
-import { HTMLStyledProps, styled } from '@pacha/styled-system'
-import { TooltipVariantProps, tooltip } from '@pacha/styled-system'
+import { HTMLStyledProps, styled } from '@pacha/styled-system/jsx'
+import { TooltipVariantProps, tooltip } from '@pacha/styled-system/recipes'
 import { createStyleContext } from './create-style-context'
 
 const { withProvider, withContext } = createStyleContext(tooltip)
@@ -20,10 +20,10 @@ const TooltipPositioner = withContext(styled(Ark.Tooltip.Positioner), 'positione
 const TooltipTrigger = withContext(styled(Ark.Tooltip.Trigger), 'trigger')
 
 export const Tooltip = Object.assign(TooltipRoot, {
-  Root: TooltipRoot,
-  Arrow: TooltipArrow,
-  ArrowTip: TooltipArrowTip,
-  Content: TooltipContent,
-  Positioner: TooltipPositioner,
-  Trigger: TooltipTrigger,
+	Root: TooltipRoot,
+	Arrow: TooltipArrow,
+	ArrowTip: TooltipArrowTip,
+	Content: TooltipContent,
+	Positioner: TooltipPositioner,
+	Trigger: TooltipTrigger,
 })

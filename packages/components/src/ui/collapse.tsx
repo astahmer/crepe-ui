@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useState } from 'react'
 import { AnimatePresence, HTMLMotionProps, motion, Variants as _Variants } from 'framer-motion'
-import { cx } from '@pacha/styled-system'
+import { cx } from '@pacha/styled-system/css'
 import { TRANSITION_EASINGS, Variants, withDelay, WithTransitionConfig } from './transition-utils'
 
 // https://github.com/chakra-ui/chakra-ui/blob/f4b1ad66be1ada4b2728faef4c68a82a76f02532/packages/components/src/transition/collapse.tsx
@@ -8,47 +8,47 @@ import { TRANSITION_EASINGS, Variants, withDelay, WithTransitionConfig } from '.
 const isNumeric = (value?: number | string) => value != null && Number.parseInt(value.toString(), 10) > 0
 
 export interface CollapseOptions {
-  /**
-   * If `true`, the opacity of the content will be animated
-   * @default true
-   */
-  animateOpacity?: boolean
-  /**
-   * The height you want the content in its collapsed state.
-   * @default 0
-   */
-  startingHeight?: number | string
-  /**
-   * The height you want the content in its expanded state.
-   * @default "auto"
-   */
-  endingHeight?: number | string
+	/**
+	 * If `true`, the opacity of the content will be animated
+	 * @default true
+	 */
+	animateOpacity?: boolean
+	/**
+	 * The height you want the content in its collapsed state.
+	 * @default 0
+	 */
+	startingHeight?: number | string
+	/**
+	 * The height you want the content in its expanded state.
+	 * @default "auto"
+	 */
+	endingHeight?: number | string
 }
 
 const defaultTransitions = {
-  exit: {
-    height: { duration: 0.2, ease: TRANSITION_EASINGS.ease },
-    opacity: { duration: 0.3, ease: TRANSITION_EASINGS.ease },
-  },
-  enter: {
-    height: { duration: 0.3, ease: TRANSITION_EASINGS.ease },
-    opacity: { duration: 0.4, ease: TRANSITION_EASINGS.ease },
-  },
+	exit: {
+		height: { duration: 0.2, ease: TRANSITION_EASINGS.ease },
+		opacity: { duration: 0.3, ease: TRANSITION_EASINGS.ease },
+	},
+	enter: {
+		height: { duration: 0.3, ease: TRANSITION_EASINGS.ease },
+		opacity: { duration: 0.4, ease: TRANSITION_EASINGS.ease },
+	},
 }
 
 const variants: Variants<CollapseOptions> = {
-  exit: ({ animateOpacity, startingHeight, transition, transitionEnd, delay }) => ({
-    ...(animateOpacity && { opacity: isNumeric(startingHeight) ? 1 : 0 }),
-    height: startingHeight,
-    transitionEnd: transitionEnd?.exit,
-    transition: transition?.exit ?? withDelay.exit(defaultTransitions.exit, delay),
-  }),
-  enter: ({ animateOpacity, endingHeight, transition, transitionEnd, delay }) => ({
-    ...(animateOpacity && { opacity: 1 }),
-    height: endingHeight,
-    transitionEnd: transitionEnd?.enter,
-    transition: transition?.enter ?? withDelay.enter(defaultTransitions.enter, delay),
-  }),
+	exit: ({ animateOpacity, startingHeight, transition, transitionEnd, delay }) => ({
+		...(animateOpacity && { opacity: isNumeric(startingHeight) ? 1 : 0 }),
+		height: startingHeight,
+		transitionEnd: transitionEnd?.exit,
+		transition: transition?.exit ?? withDelay.exit(defaultTransitions.exit, delay),
+	}),
+	enter: ({ animateOpacity, endingHeight, transition, transitionEnd, delay }) => ({
+		...(animateOpacity && { opacity: 1 }),
+		height: endingHeight,
+		transitionEnd: transitionEnd?.enter,
+		transition: transition?.enter ?? withDelay.enter(defaultTransitions.enter, delay),
+	}),
 }
 
 export type ICollapse = CollapseProps
@@ -56,83 +56,83 @@ export type ICollapse = CollapseProps
 export interface CollapseProps extends WithTransitionConfig<HTMLMotionProps<'div'>>, CollapseOptions {}
 
 export const Collapse = forwardRef<HTMLDivElement, CollapseProps>((props, ref) => {
-  const {
-    in: isOpen,
-    unmountOnExit,
-    animateOpacity = true,
-    startingHeight = 0,
-    endingHeight = 'auto',
-    style,
-    className,
-    transition,
-    transitionEnd,
-    ...rest
-  } = props
+	const {
+		in: isOpen,
+		unmountOnExit,
+		animateOpacity = true,
+		startingHeight = 0,
+		endingHeight = 'auto',
+		style,
+		className,
+		transition,
+		transitionEnd,
+		...rest
+	} = props
 
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setMounted(true)
-    })
-    return () => void clearTimeout(timeout)
-  }, [])
+	const [mounted, setMounted] = useState(false)
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			setMounted(true)
+		})
+		return () => void clearTimeout(timeout)
+	}, [])
 
-  /**
-   * Warn 🚨: `startingHeight` and `unmountOnExit` are mutually exclusive
-   *
-   * If you specify a starting height, the collapsed needs to be mounted
-   * for the height to take effect.
-   */
-  const condition = Number(startingHeight) > 0 && !!unmountOnExit
-  if (condition) {
-    console.warn({
-      condition: Number(startingHeight) > 0 && !!unmountOnExit,
-      message: `startingHeight and unmountOnExit are mutually exclusive. You can't use them together`,
-    })
-  }
+	/**
+	 * Warn 🚨: `startingHeight` and `unmountOnExit` are mutually exclusive
+	 *
+	 * If you specify a starting height, the collapsed needs to be mounted
+	 * for the height to take effect.
+	 */
+	const condition = Number(startingHeight) > 0 && !!unmountOnExit
+	if (condition) {
+		console.warn({
+			condition: Number(startingHeight) > 0 && !!unmountOnExit,
+			message: `startingHeight and unmountOnExit are mutually exclusive. You can't use them together`,
+		})
+	}
 
-  const hasStartingHeight = Number.parseFloat(startingHeight.toString()) > 0
+	const hasStartingHeight = Number.parseFloat(startingHeight.toString()) > 0
 
-  const custom = {
-    startingHeight,
-    endingHeight,
-    animateOpacity,
-    transition: mounted ? transition : { enter: { duration: 0 } },
-    transitionEnd: {
-      enter: transitionEnd?.enter,
-      exit: unmountOnExit
-        ? transitionEnd?.exit
-        : {
-            ...transitionEnd?.exit,
-            display: hasStartingHeight ? 'block' : 'none',
-          },
-    },
-  }
+	const custom = {
+		startingHeight,
+		endingHeight,
+		animateOpacity,
+		transition: mounted ? transition : { enter: { duration: 0 } },
+		transitionEnd: {
+			enter: transitionEnd?.enter,
+			exit: unmountOnExit
+				? transitionEnd?.exit
+				: {
+						...transitionEnd?.exit,
+						display: hasStartingHeight ? 'block' : 'none',
+				  },
+		},
+	}
 
-  const show = unmountOnExit ? isOpen : true
-  const animate = isOpen || unmountOnExit ? 'enter' : 'exit'
+	const show = unmountOnExit ? isOpen : true
+	const animate = isOpen || unmountOnExit ? 'enter' : 'exit'
 
-  return (
-    <AnimatePresence initial={false} custom={custom}>
-      {show && (
-        <motion.div
-          ref={ref}
-          {...rest}
-          className={cx('chakra-collapse', className)}
-          style={{
-            overflow: 'hidden',
-            display: 'block',
-            ...style,
-          }}
-          custom={custom}
-          variants={variants as _Variants}
-          initial={unmountOnExit ? 'exit' : false}
-          animate={animate}
-          exit="exit"
-        />
-      )}
-    </AnimatePresence>
-  )
+	return (
+		<AnimatePresence initial={false} custom={custom}>
+			{show && (
+				<motion.div
+					ref={ref}
+					{...rest}
+					className={cx('chakra-collapse', className)}
+					style={{
+						overflow: 'hidden',
+						display: 'block',
+						...style,
+					}}
+					custom={custom}
+					variants={variants as _Variants}
+					initial={unmountOnExit ? 'exit' : false}
+					animate={animate}
+					exit="exit"
+				/>
+			)}
+		</AnimatePresence>
+	)
 })
 
 Collapse.displayName = 'Collapse'

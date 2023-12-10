@@ -6,20 +6,20 @@ import { cssVar } from '@pacha/shared'
 const $bg = cssVar.create('kbd-bg')
 
 export const kbdRecipe = defineRecipe({
-  className: 'kbd',
-  base: {
-    [$bg.name]: 'gray.100',
-    _dark: {
-      [$bg.name]: 'whiteAlpha.100',
-    },
-    bg: $bg.ref,
-    borderRadius: 'md',
-    borderWidth: '1px',
-    borderBottomWidth: '3px',
-    fontSize: '0.8em',
-    fontWeight: 'bold',
-    lineHeight: 'normal',
-    px: '0.4em',
-    whiteSpace: 'nowrap',
-  },
+	className: 'kbd',
+	base: {
+		[$bg.name]: 'gray.100',
+		_dark: {
+			[$bg.name]: 'whiteAlpha.100',
+		},
+		bg: $bg.ref,
+		borderRadius: 'md',
+		borderWidth: '1px',
+		borderBottomWidth: '3px',
+		fontSize: '0.8em',
+		fontWeight: 'bold',
+		lineHeight: 'normal',
+		px: '0.4em',
+		whiteSpace: 'nowrap',
+	},
 })

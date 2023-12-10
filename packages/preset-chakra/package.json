@@ -23,16 +23,14 @@
   },
   "scripts": {
     "dev": "tsup --watch",
-    "build": "tsup",
-    "fmt": "prettier --write ./src ./tests"
+    "build": "tsup"
   },
   "dependencies": {
     "@ark-ui/anatomy": "^0.1.0",
     "@pacha/shared": "workspace:^",
-    "@pandacss/dev": "^0.17.0"
+    "@pandacss/dev": "^0.21.0"
   },
   "devDependencies": {
-    "prettier": "^3.0.3",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2"
   },

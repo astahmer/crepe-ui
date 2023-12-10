@@ -1,7 +1,7 @@
 import { cssVar } from '@pacha/shared'
-import { tooltipVars } from './recipes/tooltip.recipe'
 
 export const cssVariables = {
-  skeleton: cssVar.scope('skeleton', ['start-color', 'end-color']),
-  tooltip: tooltipVars,
+	badge: cssVar.scope('badge', [['bg', 'inherit'], ['bg-alpha', 'inherit'], ['color', 'inherit'], 'shadow']),
+	skeleton: cssVar.scope('skeleton', ['start-color', 'end-color']),
+	tooltip: cssVar.scope('tooltip', ['bg', 'fg', 'arrow-bg']),
 }

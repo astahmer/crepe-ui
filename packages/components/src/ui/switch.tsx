@@ -1,6 +1,6 @@
 import * as Ark from '@ark-ui/react/switch'
-import { HTMLStyledProps, styled } from '@pacha/styled-system'
-import { switchRecipe, type SwitchRecipeVariantProps } from '@pacha/styled-system'
+import { HTMLStyledProps, styled } from '@pacha/styled-system/jsx'
+import { switchRecipe, type SwitchRecipeVariantProps } from '@pacha/styled-system/recipes'
 import { createStyleContext } from './create-style-context'
 import { PreferRight } from '@pacha/shared'
 
@@ -16,10 +16,10 @@ interface JsxProps extends PreferRight<Ark.SwitchProps, StyleProps> {}
 export interface SwitchProps extends Omit<JsxProps, 'size'>, SwitchRecipeVariantProps {}
 
 export interface UseSwitchProps extends Optional<zag.Context, 'id'> {
-  /**
-   * The initial checked state of the switch.
-   */
-  defaultChecked?: zag.Context['checked']
+	/**
+	 * The initial checked state of the switch.
+	 */
+	defaultChecked?: zag.Context['checked']
 }
 
 // Ark-UI doesn't (yet ?) expose the UseXXXProps and we need it for tsc .d.ts
@@ -29,8 +29,8 @@ interface UseAvatarProps extends Optional<zag.Context, 'id'> {}
 
 // and that means we also have to cast this one
 const SwitchRoot = withProvider(
-  styled(Ark.Switch.Root as ForwardRefExoticComponent<ComponentProps<'label'> & UseAvatarProps>),
-  'root',
+	styled(Ark.Switch.Root as ForwardRefExoticComponent<ComponentProps<'label'> & UseAvatarProps>),
+	'root',
 )
 
 const SwitchControl = withContext(styled(Ark.Switch.Control), 'control')
@@ -38,8 +38,8 @@ const SwitchLabel = withContext(styled(Ark.Switch.Label), 'label')
 const SwitchThumb = withContext(styled(Ark.Switch.Thumb), 'thumb')
 
 export const Switch = Object.assign(SwitchRoot, {
-  Root: SwitchRoot,
-  Control: SwitchControl,
-  Label: SwitchLabel,
-  Thumb: SwitchThumb,
+	Root: SwitchRoot,
+	Control: SwitchControl,
+	Label: SwitchLabel,
+	Thumb: SwitchThumb,
 })

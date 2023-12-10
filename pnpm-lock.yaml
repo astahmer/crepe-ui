@@ -153,6 +153,18 @@ importers:
 
   storybook:
     dependencies:
+      '@pacha/components':
+        specifier: workspace:^
+        version: link:../packages/components
+      '@pacha/preset-chakra':
+        specifier: workspace:^
+        version: link:../packages/preset-chakra
+      '@pacha/shared':
+        specifier: workspace:^
+        version: link:../packages/shared
+      '@pacha/styled-system':
+        specifier: workspace:^
+        version: link:../packages/styled-system
       react:
         specifier: ^18.2.0
         version: 18.2.0

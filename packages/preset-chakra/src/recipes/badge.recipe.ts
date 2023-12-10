@@ -43,7 +43,7 @@ export const badgeRecipe = defineRecipe({
 				},
 			},
 			subtle: {
-				[vars.bg.name]: 'colorPalette.100',
+				[vars.bg.name]: 'colors.colorPalette.100',
 				[vars.color.name]: 'colors.colorPalette.800',
 				_dark: {
 					[vars['bg-alpha'].name]: bgDark.subtle.colorMixValue,

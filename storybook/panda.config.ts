@@ -1,20 +1,25 @@
+import { defaultConfig } from '@pacha/shared'
 import { defineConfig } from '@pandacss/dev'
 
 export default defineConfig({
-	// Whether to use css reset
-	preflight: true,
-
-	// Where to look for your css declarations
+	presets: defaultConfig.presets,
+	// staticCss: defaultConfig.staticCss,
+	preflight: false,
 	include: ['./stories/**/*.{js,jsx,ts,tsx}'],
-
-	// Files to exclude
-	exclude: [],
-
-	// Useful for theme customization
+	outdir: 'node_modules/@pacha/styled-system/styled-system',
+	importMap: '@pacha/styled-system',
+	jsxFramework: 'react',
 	theme: {
-		extend: {},
+		extend: {
+			tokens: {
+				colors: {
+					red: {
+						300: {
+							value: 'yellow',
+						},
+					},
+				},
+			},
+		},
 	},
-
-	// The output directory for your css system
-	outdir: 'styled-system',
 })

@@ -1,5 +1,7 @@
 import type { Preview } from '@storybook/react'
 import '../stories/index.css'
+import '@pacha/preset-chakra/reset.css'
+import '@pacha/components/static.css'
 
 const preview: Preview = {
 	parameters: {

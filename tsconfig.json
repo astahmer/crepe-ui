@@ -4,7 +4,7 @@
     "strictNullChecks": true,
     "moduleResolution": "Bundler",
     "module": "ESNext",
-    "customConditions": ["source"],
+    // "customConditions": ["source"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "jsx": "react-jsx",

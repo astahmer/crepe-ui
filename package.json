@@ -2,7 +2,7 @@
   "name": "pacha",
   "private": true,
   "scripts": {
-    "dev": "pnpm --filter=./packages/preset-chakra dev",
+    "dev": "pnpm --parallel --filter=./packages/shared --filter=./packages/preset-chakra dev",
     "build": "pnpm -r --filter=./packages/** build",
     "fmt": "biome format . --write",
     "lint": "biome lint .",

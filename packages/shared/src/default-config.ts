@@ -1,6 +1,7 @@
 import type { StaticCssOptions } from '@pandacss/types'
 
 const staticCss: StaticCssOptions = {
+	css: [{ properties: { colorPalette: ['*'] } }],
 	recipes: {
 		alert: ['*'],
 		avatar: ['*'],

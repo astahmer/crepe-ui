@@ -8,9 +8,9 @@ const $bg = cssVar.create('kbd-bg')
 export const kbdRecipe = defineRecipe({
 	className: 'kbd',
 	base: {
-		[$bg.name]: 'gray.100',
+		[$bg.name]: 'colors.gray.100',
 		_dark: {
-			[$bg.name]: 'whiteAlpha.100',
+			[$bg.name]: 'colors.whiteAlpha.100',
 		},
 		bg: $bg.ref,
 		borderRadius: 'md',

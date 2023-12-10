@@ -9,6 +9,8 @@ export default defineConfig({
 	outdir: 'node_modules/@pacha/styled-system/styled-system',
 	importMap: '@pacha/styled-system',
 	jsxFramework: 'react',
+
+	// This will override the @pacha/styled-system token class generation
 	theme: {
 		extend: {
 			tokens: {

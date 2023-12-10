@@ -160,6 +160,9 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
+      '@pandacss/dev':
+        specifier: ^0.21.0
+        version: 0.21.0(typescript@5.2.2)
       '@storybook/addon-essentials':
         specifier: ^7.6.4
         version: 7.6.4(@types/react-dom@18.2.15)(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0)

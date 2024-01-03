@@ -5,5 +5,5 @@ export default defineConfig({
 	clean: true,
 	dts: true,
 	format: ['esm', 'cjs'],
-	external: ['@pacha/styled-system', 'react', 'react-dom', '@ark-ui/react'],
+	external: ['@crepe-ui/styled-system', 'react', 'react-dom', '@ark-ui/react'],
 })

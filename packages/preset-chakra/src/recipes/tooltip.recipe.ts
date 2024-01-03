@@ -1,5 +1,5 @@
 import { tooltipAnatomy } from '@ark-ui/anatomy'
-import { cssVar } from '@pacha/shared'
+import { cssVar } from '@crepe-ui/shared'
 import { defineSlotRecipe } from '@pandacss/dev'
 import { cssVariables } from '../vars'
 

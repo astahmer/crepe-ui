@@ -1,6 +1,6 @@
 import { defineTokens } from '@pandacss/dev'
 import { themeFoundations } from './foundations'
-import { wrapValue } from '@pacha/shared'
+import { wrapValue } from '@crepe-ui/shared'
 
 export const tokens = defineTokens({
 	borders: wrapValue(themeFoundations.borders),

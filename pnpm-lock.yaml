@@ -45,13 +45,13 @@ importers:
       '@ark-ui/react':
         specifier: ^0.15.0
         version: 0.15.0(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
-      '@pacha/preset-chakra':
+      '@crepe-ui/preset-chakra':
         specifier: workspace:^
         version: link:../preset-chakra
-      '@pacha/shared':
+      '@crepe-ui/shared':
         specifier: workspace:^
         version: link:../shared
-      '@pacha/styled-system':
+      '@crepe-ui/styled-system':
         specifier: workspace:^
         version: link:../styled-system
       '@pandacss/dev':
@@ -112,7 +112,7 @@ importers:
       '@ark-ui/anatomy':
         specifier: ^0.1.0
         version: 0.1.0(@internationalized/date@3.5.0)
-      '@pacha/shared':
+      '@crepe-ui/shared':
         specifier: workspace:^
         version: link:../shared
       '@pandacss/dev':
@@ -140,11 +140,11 @@ importers:
 
   packages/styled-system:
     dependencies:
-      '@pacha/shared':
+      '@crepe-ui/shared':
         specifier: workspace:^
         version: link:../shared
     devDependencies:
-      '@pacha/preset-chakra':
+      '@crepe-ui/preset-chakra':
         specifier: workspace:^
         version: link:../preset-chakra
       '@pandacss/dev':
@@ -159,16 +159,16 @@ importers:
 
   storybook:
     dependencies:
-      '@pacha/components':
+      '@crepe-ui/components':
         specifier: workspace:^
         version: link:../packages/components
-      '@pacha/preset-chakra':
+      '@crepe-ui/preset-chakra':
         specifier: workspace:^
         version: link:../packages/preset-chakra
-      '@pacha/shared':
+      '@crepe-ui/shared':
         specifier: workspace:^
         version: link:../packages/shared
-      '@pacha/styled-system':
+      '@crepe-ui/styled-system':
         specifier: workspace:^
         version: link:../packages/styled-system
       react:

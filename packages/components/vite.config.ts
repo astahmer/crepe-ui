@@ -7,7 +7,7 @@ export default defineConfig({
 	resolve: {
 		conditions: ['source'],
 		alias: {
-			'@pacha/components': path.resolve(__dirname, '../components/src/components.ts'),
+			'@crepe-ui/components': path.resolve(__dirname, '../components/src/components.ts'),
 		},
 	},
 	build: {
@@ -19,7 +19,7 @@ export default defineConfig({
 		},
 		rollupOptions: {
 			// external: ['react', 'react-dom'],
-			external: ['@pacha/styled-system', 'react', 'react-dom', '@ark-ui/react'],
+			external: ['@crepe-ui/styled-system', 'react', 'react-dom', '@ark-ui/react'],
 		},
 	},
 })

@@ -1,5 +1,5 @@
 import { defineSlotRecipe } from '@pandacss/dev'
-import { cssVar } from '@pacha/shared'
+import { cssVar } from '@crepe-ui/shared'
 
 // https://github.com/chakra-ui/chakra-ui/blob/f4b1ad66be1ada4b2728faef4c68a82a76f02532/packages/components/src/avatar/avatar.tsx
 // https://github.com/chakra-ui/chakra-ui/blob/b904bbccab7d9c3b7ead48043b0e0652701f31f8/packages/theme/src/components/avatar.ts

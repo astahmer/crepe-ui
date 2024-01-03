@@ -9,10 +9,10 @@
     "build": "storybook build"
   },
   "dependencies": {
-    "@pacha/components": "workspace:^",
-    "@pacha/preset-chakra": "workspace:^",
-    "@pacha/shared": "workspace:^",
-    "@pacha/styled-system": "workspace:^",
+    "@crepe-ui/components": "workspace:^",
+    "@crepe-ui/preset-chakra": "workspace:^",
+    "@crepe-ui/shared": "workspace:^",
+    "@crepe-ui/styled-system": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

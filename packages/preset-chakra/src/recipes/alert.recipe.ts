@@ -1,4 +1,4 @@
-import { colorMixVar, cssVar } from '@pacha/shared'
+import { colorMixVar, cssVar } from '@crepe-ui/shared'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 // https://github.com/chakra-ui/chakra-ui/blob/f4b1ad66be1ada4b2728faef4c68a82a76f02532/packages/components/src/alert/alert.tsx

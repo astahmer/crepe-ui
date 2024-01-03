@@ -1,4 +1,4 @@
-import { defaultConfig } from '@pacha/shared'
+import { defaultConfig } from '@crepe-ui/shared'
 import { defineConfig } from '@pandacss/dev'
 
 export default defineConfig({
@@ -6,11 +6,11 @@ export default defineConfig({
 	// staticCss: defaultConfig.staticCss,
 	preflight: false,
 	include: ['./stories/**/*.{js,jsx,ts,tsx}'],
-	outdir: 'node_modules/@pacha/styled-system/styled-system',
-	importMap: '@pacha/styled-system',
+	outdir: 'node_modules/@crepe-ui/styled-system/styled-system',
+	importMap: '@crepe-ui/styled-system',
 	jsxFramework: 'react',
 
-	// This will override the @pacha/styled-system token class generation
+	// This will override the @crepe-ui/styled-system token class generation
 	theme: {
 		extend: {
 			tokens: {

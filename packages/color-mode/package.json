@@ -1,5 +1,5 @@
 {
-  "name": "@pacha/color-mode",
+  "name": "@crepe-ui/color-mode",
   "version": "0.0.1",
   "types": "./src/color-mode.ts",
   "main": "./dist/color-mode.js",
@@ -35,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/astahmer/pacha",
+    "url": "https://github.com/astahmer/crepe-ui",
     "directory": "packages/color-mode"
   },
   "sideEffects": false,

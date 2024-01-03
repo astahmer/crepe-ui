@@ -1,4 +1,4 @@
-import { defaultConfig } from '@pacha/shared'
+import { defaultConfig } from '@crepe-ui/shared'
 import { defineConfig } from '@pandacss/dev'
 
 // This panda/config only exists to generate the lightweight `outdir` (styled-system) JS runtime
@@ -19,10 +19,10 @@ export default defineConfig({
 	include: ['demo/**/*'],
 
 	// The output directory for your css system
-	// using the same `@pacha/styled-system` acrosss all packages
+	// using the same `@crepe-ui/styled-system` acrosss all packages
 	// and by marking it as `external` in the `tsup.config.ts`
 	// will make all packages use the same `styled-system` runtime
-	importMap: '@pacha/styled-system',
+	importMap: '@crepe-ui/styled-system',
 
 	// The JSX framework to use
 	jsxFramework: 'react',

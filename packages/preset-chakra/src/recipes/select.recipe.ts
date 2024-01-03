@@ -1,7 +1,7 @@
 import { selectAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 import { inputRecipe } from './input.recipe'
-import { cssVar } from '@pacha/shared'
+import { cssVar } from '@crepe-ui/shared'
 
 // most of this recipe is from Park-UI as the Chakra-UI select is very different
 // Chakra's select is a native select styled like a Chakra Input

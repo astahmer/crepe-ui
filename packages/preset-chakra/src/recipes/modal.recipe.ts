@@ -3,7 +3,7 @@
 import { dialogAnatomy } from '@ark-ui/anatomy'
 
 import { defineSlotRecipe } from '@pandacss/dev'
-import { cssVar } from '@pacha/shared'
+import { cssVar } from '@crepe-ui/shared'
 
 const $bg = cssVar.create('modal-bg')
 const $shadow = cssVar.create('modal-shadow')

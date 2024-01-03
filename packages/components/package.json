@@ -1,5 +1,5 @@
 {
-  "name": "@pacha/components",
+  "name": "@crepe-ui/components",
   "version": "0.0.1",
   "types": "./src/components.ts",
   "exports": {
@@ -29,9 +29,9 @@
   },
   "dependencies": {
     "@ark-ui/react": "^0.15.0",
-    "@pacha/preset-chakra": "workspace:^",
-    "@pacha/shared": "workspace:^",
-    "@pacha/styled-system": "workspace:^",
+    "@crepe-ui/preset-chakra": "workspace:^",
+    "@crepe-ui/shared": "workspace:^",
+    "@crepe-ui/styled-system": "workspace:^",
     "@pandacss/dev": "^0.21.0",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
@@ -54,7 +54,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/astahmer/pacha",
+    "url": "https://github.com/astahmer/crepe-ui",
     "directory": "packages/components"
   },
   "sideEffects": false,

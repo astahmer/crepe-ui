@@ -1,5 +1,5 @@
 {
-  "name": "pacha",
+  "name": "crepe-ui",
   "private": true,
   "scripts": {
     "dev": "pnpm --parallel --filter=./packages/shared --filter=./packages/preset-chakra dev",

@@ -1,4 +1,4 @@
-import { styled } from '@pacha/styled-system/jsx'
-import { badge } from '@pacha/styled-system/recipes'
+import { styled } from "@crepe-ui/styled-system/jsx";
+import { badge } from "@crepe-ui/styled-system/recipes";
 
-export const Badge = styled('span', badge)
+export const Badge = styled("span", badge);

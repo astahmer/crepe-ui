@@ -1,5 +1,5 @@
 import { defineUtility } from '@pandacss/dev'
-import { colorMix } from '@pacha/shared'
+import { colorMix } from '@crepe-ui/shared'
 
 const noOfLines = defineUtility({
 	className: 'n-lines',

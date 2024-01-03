@@ -1,17 +1,17 @@
-import * as Ark from '@ark-ui/react/tabs'
-import { PreferRight } from '@pacha/shared'
-import { HTMLStyledProps, styled } from '@pacha/styled-system/jsx'
-import { TabsVariantProps, tabs } from '@pacha/styled-system/recipes'
-import { createStyleContext } from './create-style-context'
+import * as Ark from "@ark-ui/react/tabs";
+import { PreferRight } from "@crepe-ui/shared";
+import { HTMLStyledProps, styled } from "@crepe-ui/styled-system/jsx";
+import { TabsVariantProps, tabs } from "@crepe-ui/styled-system/recipes";
+import { createStyleContext } from "./create-style-context";
 
-import { ComponentProps, ForwardRefExoticComponent, ReactElement } from 'react'
-import type * as presence from '@zag-js/presence'
-import type * as zag from '@zag-js/tabs'
-import { type Optional } from './types'
-import type { HTMLArkProps } from '@ark-ui/react'
-import { Assign } from '@pacha/styled-system/types'
+import { ComponentProps, ForwardRefExoticComponent, ReactElement } from "react";
+import type * as presence from "@zag-js/presence";
+import type * as zag from "@zag-js/tabs";
+import { type Optional } from "./types";
+import type { HTMLArkProps } from "@ark-ui/react";
+import { Assign } from "@crepe-ui/styled-system/types";
 
-const { withProvider, withContext } = createStyleContext(tabs)
+const { withProvider, withContext } = createStyleContext(tabs);
 
 // export * from '@ark-ui/react/tabs';
 interface StyleProps extends HTMLStyledProps<typeof Ark.Tabs.Root> {}
@@ -22,59 +22,74 @@ export interface TabsProps extends JsxProps, TabsVariantProps {}
 // Ark-UI doesn't (yet ?) expose the UseXXXProps and we need it for tsc .d.ts
 // https://github.com/microsoft/TypeScript/issues/47663
 // https://github.com/chakra-ui/ark/blob/ba18a28ac8dae026d2489e6fb19d4064beaeb407/packages/frameworks/react/src/tabs/use-tabs.ts
-interface UseTabsProps extends Optional<zag.Context, 'id'> {
-	/**
-	 * The initial value of the tabs.
-	 */
-	defaultValue?: zag.Context['value']
+interface UseTabsProps extends Optional<zag.Context, "id"> {
+  /**
+   * The initial value of the tabs.
+   */
+  defaultValue?: zag.Context["value"];
 }
 
-interface UsePresenceProps extends Optional<presence.Context, 'present'> {}
+interface UsePresenceProps extends Optional<presence.Context, "present"> {}
 interface PresenceProps extends UsePresenceProps {
-	/**
-	 * Only a single child is allowed.
-	 */
-	children: ReactElement
-	/**
-	 * Whether to enable lazy mounting
-	 * @default false
-	 */
-	lazyMount?: boolean
-	/**
-	 * Whether to unmount on exit.
-	 * @default false
-	 */
-	unmountOnExit?: boolean
+  /**
+   * Only a single child is allowed.
+   */
+  children: ReactElement;
+  /**
+   * Whether to enable lazy mounting
+   * @default false
+   */
+  lazyMount?: boolean;
+  /**
+   * Whether to unmount on exit.
+   * @default false
+   */
+  unmountOnExit?: boolean;
 }
 
 interface TabPresenceProps extends PresenceProps, zag.ContentProps {}
-type InnerTabContentProps = HTMLArkProps<'div'> & zag.ContentProps
-interface TabContentProps extends InnerTabContentProps, Omit<TabPresenceProps, 'children'> {}
+type InnerTabContentProps = HTMLArkProps<"div"> & zag.ContentProps;
+interface TabContentProps
+  extends InnerTabContentProps,
+    Omit<TabPresenceProps, "children"> {}
 
-interface TabTriggerProps extends Assign<HTMLArkProps<'button'>, zag.TriggerProps> {}
+interface TabTriggerProps
+  extends Assign<HTMLArkProps<"button">, zag.TriggerProps> {}
 
 const TabsRoot = withProvider(
-	styled(Ark.Tabs.Root as ForwardRefExoticComponent<ComponentProps<'div'> & UseTabsProps>),
-	'root',
-)
+  styled(
+    Ark.Tabs.Root as ForwardRefExoticComponent<
+      ComponentProps<"div"> & UseTabsProps
+    >
+  ),
+  "root"
+);
 
 const TabContent = withContext(
-	styled(Ark.Tabs.Content as ForwardRefExoticComponent<ComponentProps<'div'> & TabContentProps>),
-	'content',
-)
-const TabPanels = withContext(styled('div'), 'panels')
-const TabIndicator = withContext(styled(Ark.Tabs.Indicator), 'indicator')
-const TabList = withContext(styled(Ark.Tabs.List), 'list')
+  styled(
+    Ark.Tabs.Content as ForwardRefExoticComponent<
+      ComponentProps<"div"> & TabContentProps
+    >
+  ),
+  "content"
+);
+const TabPanels = withContext(styled("div"), "panels");
+const TabIndicator = withContext(styled(Ark.Tabs.Indicator), "indicator");
+const TabList = withContext(styled(Ark.Tabs.List), "list");
 const TabTrigger = withContext(
-	styled(Ark.Tabs.Trigger as ForwardRefExoticComponent<ComponentProps<'div'> & TabTriggerProps>),
-	'trigger',
-)
+  styled(
+    Ark.Tabs.Trigger as ForwardRefExoticComponent<
+      ComponentProps<"div"> & TabTriggerProps
+    >
+  ),
+  "trigger"
+);
 
 export const Tabs = Object.assign(TabsRoot, {
-	Root: TabsRoot,
-	Panels: TabPanels,
-	Content: TabContent,
-	Indicator: TabIndicator,
-	List: TabList,
-	Trigger: TabTrigger,
-})
+  Root: TabsRoot,
+  Panels: TabPanels,
+  Content: TabContent,
+  Indicator: TabIndicator,
+  List: TabList,
+  Trigger: TabTrigger,
+});

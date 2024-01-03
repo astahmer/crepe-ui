@@ -1,5 +1,5 @@
 {
-  "name": "@pacha/styled-system",
+  "name": "@crepe-ui/styled-system",
   "version": "0.0.0",
   "sideEffects": false,
   "type": "module",
@@ -38,20 +38,20 @@
     "prepare": "panda codegen"
   },
   "devDependencies": {
-    "@pacha/preset-chakra": "workspace:^",
+    "@crepe-ui/preset-chakra": "workspace:^",
     "@pandacss/dev": "^0.21.0",
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/astahmer/pacha",
+    "url": "https://github.com/astahmer/crepe-ui",
     "directory": "packages/styled-system"
   },
   "files": [
     "styled-system"
   ],
   "dependencies": {
-    "@pacha/shared": "workspace:^"
+    "@crepe-ui/shared": "workspace:^"
   }
 }

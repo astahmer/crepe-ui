@@ -1,4 +1,4 @@
-import { styled } from '@pacha/styled-system/jsx'
-import { kbd } from '@pacha/styled-system/recipes'
+import { styled } from "@crepe-ui/styled-system/jsx";
+import { kbd } from "@crepe-ui/styled-system/recipes";
 
-export const Kbd = styled('span', kbd)
+export const Kbd = styled("span", kbd);

@@ -34,5 +34,5 @@ export const defaultConfig = {
 	// prefix: 'p',
 	cssVarRoot: '',
 	staticCss,
-	presets: ['@pandacss/preset-panda', '@pacha/preset-chakra'],
+	presets: ['@pandacss/preset-panda', '@crepe-ui/preset-chakra'],
 }

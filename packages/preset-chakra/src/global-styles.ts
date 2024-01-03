@@ -1,4 +1,4 @@
-import { defaultConfig } from '@pacha/shared'
+import { defaultConfig } from '@crepe-ui/shared'
 import { defineGlobalStyles } from '@pandacss/dev'
 
 export const globalStyles = defineGlobalStyles({

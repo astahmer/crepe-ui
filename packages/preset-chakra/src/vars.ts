@@ -1,4 +1,4 @@
-import { cssVar } from '@pacha/shared'
+import { cssVar } from '@crepe-ui/shared'
 
 export const cssVariables = {
 	badge: cssVar.scope('badge', [['bg', 'inherit'], ['bg-alpha', 'inherit'], ['color', 'inherit'], 'shadow']),

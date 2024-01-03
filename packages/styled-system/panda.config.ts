@@ -1,4 +1,4 @@
-import { defaultConfig } from '@crepe-ui/shared'
+import { defaultConfig } from '@crepe-ui/preset-chakra'
 import { defineConfig } from '@pandacss/dev'
 
 // This panda/config only exists to generate the lightweight `outdir` (styled-system) JS runtime
@@ -7,9 +7,6 @@ import { defineConfig } from '@pandacss/dev'
 
 export default defineConfig({
 	presets: defaultConfig.presets,
-	// prefix: defaultConfig.prefix,
-	// cssVarRoot: defaultConfig.cssVarRoot,
-	// staticCss: defaultConfig.staticCss,
 
 	// Whether to use css reset
 	preflight: false,

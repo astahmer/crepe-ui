@@ -4,22 +4,21 @@ import {
   checkbox,
   type CheckboxVariantProps,
 } from "@crepe-ui/styled-system/recipes";
-import { createStyleContext } from "./create-style-context";
 import { CheckboxIcon } from "./checkbox-icon";
-import { PreferRight } from "@crepe-ui/shared";
+import { createStyleContext } from "./create-style-context";
 
-import { ComponentProps, ForwardRefExoticComponent, ReactNode } from "react";
+import { Assign } from "@crepe-ui/styled-system/types";
 import type * as zag from "@zag-js/checkbox";
 import type { PropTypes } from "@zag-js/react";
+import { ComponentProps, ForwardRefExoticComponent, ReactNode } from "react";
 import { type Optional } from "./types";
-import { Assign } from "@crepe-ui/styled-system/types";
 
 const { withProvider, withContext } = createStyleContext(checkbox);
 
 // export * from '@ark-ui/react/checkbox';
 
 interface StyleProps extends HTMLStyledProps<"label"> {}
-interface JsxProps extends PreferRight<Ark.CheckboxProps, StyleProps> {}
+interface JsxProps extends Assign<Ark.CheckboxProps, StyleProps> {}
 
 export interface CheckboxProps extends JsxProps, CheckboxVariantProps {}
 

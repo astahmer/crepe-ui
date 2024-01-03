@@ -1,4 +1,4 @@
-import { PreferRight } from "@crepe-ui/shared";
+import { Assign } from "@crepe-ui/styled-system/types";
 import { forwardRef } from "react";
 import { HTMLStyledProps, styled } from "@crepe-ui/styled-system/jsx";
 import {
@@ -20,7 +20,7 @@ const { withProvider, withContext } = createStyleContext(formControl);
 
 // export * from '@ark-ui/react/formControl';
 interface StyleProps extends HTMLStyledProps<"div"> {}
-interface JsxProps extends PreferRight<ComponentProps<"div">, StyleProps> {}
+interface JsxProps extends Assign<ComponentProps<"div">, StyleProps> {}
 
 interface FormControlContext extends FormControlOptions {
   /**

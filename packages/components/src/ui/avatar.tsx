@@ -5,7 +5,7 @@ import {
   type AvatarVariantProps,
 } from "@crepe-ui/styled-system/recipes";
 import { createStyleContext } from "./create-style-context";
-import { PreferRight } from "@crepe-ui/shared";
+import { Assign } from "@crepe-ui/styled-system/types";
 
 import { ComponentProps, ForwardRefExoticComponent } from "react";
 import type * as zag from "@zag-js/avatar";
@@ -16,7 +16,7 @@ const { withProvider, withContext } = createStyleContext(avatar);
 // export * from '@ark-ui/react/avatar';
 
 interface StyleProps extends HTMLStyledProps<typeof Ark.Avatar.Root> {}
-interface JsxProps extends PreferRight<Ark.AvatarProps, StyleProps> {}
+interface JsxProps extends Assign<Ark.AvatarProps, StyleProps> {}
 
 export interface AvatarProps extends JsxProps, AvatarVariantProps {}
 

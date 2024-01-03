@@ -1,5 +1,5 @@
 import * as Ark from "@ark-ui/react/tooltip";
-import { PreferRight } from "@crepe-ui/shared";
+import { Assign } from "@crepe-ui/styled-system/types";
 import { HTMLStyledProps, styled } from "@crepe-ui/styled-system/jsx";
 import { TooltipVariantProps, tooltip } from "@crepe-ui/styled-system/recipes";
 import { createStyleContext } from "./create-style-context";
@@ -8,7 +8,7 @@ const { withProvider, withContext } = createStyleContext(tooltip);
 
 // export * from '@ark-ui/react/tooltip'
 interface StyleProps extends HTMLStyledProps<typeof Ark.Tooltip.Root> {}
-interface JsxProps extends PreferRight<Ark.TooltipProps, StyleProps> {}
+interface JsxProps extends Assign<Ark.TooltipProps, StyleProps> {}
 
 export interface TooltipProps extends JsxProps, TooltipVariantProps {}
 

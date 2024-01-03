@@ -1,4 +1,4 @@
-import { PreferRight } from "@crepe-ui/shared";
+import { Assign } from "@crepe-ui/styled-system/types";
 import { createStyleContext } from "./create-style-context";
 import { InputAddon } from "./input-addon";
 import { useFormControl } from "./use-form-control";
@@ -12,7 +12,7 @@ const { withProvider, withContext } = createStyleContext(input);
 
 // export * from '@ark-ui/react/input';
 interface StyleProps extends HTMLStyledProps<"input"> {}
-interface JsxProps extends PreferRight<ComponentProps<"input">, StyleProps> {}
+interface JsxProps extends Assign<ComponentProps<"input">, StyleProps> {}
 
 export interface InputProps
   extends Omit<JsxProps, "size">,

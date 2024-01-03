@@ -1,13 +1,13 @@
 import { definePreset } from '@pandacss/dev'
+import { conditions } from './conditions'
 import { globalStyles } from './global-styles'
+import { keyframes } from './keyframes'
+import { generatePreflight } from './preflight'
 import { chakraRecipes } from './recipes'
 import { semanticTokens } from './semantic-tokens'
-import { tokens } from './tokens'
-import { keyframes } from './keyframes'
-import { utilities } from './utilities'
-import { conditions } from './conditions'
 import { textStyles } from './text-styles'
-import { generatePreflight } from './preflight'
+import { tokens } from './tokens'
+import { utilities } from './utilities'
 
 export default definePreset({
 	globalCss: globalStyles,
@@ -24,4 +24,5 @@ export default definePreset({
 	},
 })
 
+export { defaultConfig } from './default-config'
 export { chakraRecipes, generatePreflight }

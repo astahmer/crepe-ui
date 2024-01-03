@@ -5,7 +5,7 @@ import {
   type SwitchRecipeVariantProps,
 } from "@crepe-ui/styled-system/recipes";
 import { createStyleContext } from "./create-style-context";
-import { PreferRight } from "@crepe-ui/shared";
+import { Assign } from "@crepe-ui/styled-system/types";
 
 import type * as zag from "@zag-js/switch";
 import { Optional } from "./types";
@@ -14,7 +14,7 @@ import { ComponentProps, ForwardRefExoticComponent } from "react";
 const { withProvider, withContext } = createStyleContext(switchRecipe);
 
 interface StyleProps extends HTMLStyledProps<"input"> {}
-interface JsxProps extends PreferRight<Ark.SwitchProps, StyleProps> {}
+interface JsxProps extends Assign<Ark.SwitchProps, StyleProps> {}
 
 export interface SwitchProps
   extends Omit<JsxProps, "size">,

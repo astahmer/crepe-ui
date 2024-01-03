@@ -1,5 +1,4 @@
 import * as Ark from "@ark-ui/react/select";
-import { PreferRight } from "@crepe-ui/shared";
 import { HTMLStyledProps, styled } from "@crepe-ui/styled-system/jsx";
 import { SelectVariantProps, select } from "@crepe-ui/styled-system/recipes";
 import { createStyleContext } from "./create-style-context";
@@ -16,7 +15,7 @@ const { withProvider, withContext } = createStyleContext(select);
 // export * from '@ark-ui/react/select';
 interface StyleProps extends HTMLStyledProps<typeof Ark.Select.Root> {}
 interface JsxProps<T extends Ark.CollectionItem>
-  extends PreferRight<Ark.SelectProps<T>, StyleProps> {}
+  extends Assign<Ark.SelectProps<T>, StyleProps> {}
 
 export interface SelectProps<T extends Ark.CollectionItem>
   extends JsxProps<T>,

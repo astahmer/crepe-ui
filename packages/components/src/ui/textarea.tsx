@@ -5,13 +5,13 @@ import {
   textarea,
 } from "@crepe-ui/styled-system/recipes";
 import { useFormControl } from "./use-form-control";
-import { PreferRight } from "@crepe-ui/shared";
+import { Assign } from "@crepe-ui/styled-system/types";
 import { FormControlOptions } from "./form-control-context";
 import { ark } from "@ark-ui/react";
 
 interface StyleProps extends HTMLStyledProps<"textarea"> {}
 interface JsxProps
-  extends PreferRight<ComponentProps<typeof ark.textarea>, StyleProps> {}
+  extends Assign<ComponentProps<typeof ark.textarea>, StyleProps> {}
 
 export interface TextareaProps
   extends Omit<JsxProps, "size">,

@@ -1,9 +1,9 @@
-import { defaultConfig } from '@crepe-ui/shared'
 import { defineGlobalStyles } from '@pandacss/dev'
+import { defaultConfig } from './default-config'
 
 export const globalStyles = defineGlobalStyles({
 	[`${defaultConfig.cssVarRoot} body`]: {
-		fontFamily: 'body', // TODO
+		fontFamily: 'body',
 		color: 'chakra-body-text',
 		bg: 'chakra-body-bg',
 		transitionProperty: 'background-color',

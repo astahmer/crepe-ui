@@ -1,5 +1,5 @@
 import * as Ark from "@ark-ui/react/popover";
-import { PreferRight } from "@crepe-ui/shared";
+import { Assign } from "@crepe-ui/styled-system/types";
 import { HTMLStyledProps, styled } from "@crepe-ui/styled-system/jsx";
 import { popover } from "@crepe-ui/styled-system/recipes";
 import { createStyleContext } from "./create-style-context";
@@ -8,7 +8,7 @@ const { withProvider, withContext } = createStyleContext(popover);
 
 // export * from '@ark-ui/react/popover'
 interface StyleProps extends HTMLStyledProps<typeof Ark.Popover.Root> {}
-interface JsxProps extends PreferRight<Ark.PopoverProps, StyleProps> {}
+interface JsxProps extends Assign<Ark.PopoverProps, StyleProps> {}
 
 export interface PopoverProps extends JsxProps {}
 

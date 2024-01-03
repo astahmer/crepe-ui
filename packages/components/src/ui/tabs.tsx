@@ -1,5 +1,5 @@
 import * as Ark from "@ark-ui/react/tabs";
-import { PreferRight } from "@crepe-ui/shared";
+import { Assign } from "@crepe-ui/styled-system/types";
 import { HTMLStyledProps, styled } from "@crepe-ui/styled-system/jsx";
 import { TabsVariantProps, tabs } from "@crepe-ui/styled-system/recipes";
 import { createStyleContext } from "./create-style-context";
@@ -9,13 +9,12 @@ import type * as presence from "@zag-js/presence";
 import type * as zag from "@zag-js/tabs";
 import { type Optional } from "./types";
 import type { HTMLArkProps } from "@ark-ui/react";
-import { Assign } from "@crepe-ui/styled-system/types";
 
 const { withProvider, withContext } = createStyleContext(tabs);
 
 // export * from '@ark-ui/react/tabs';
 interface StyleProps extends HTMLStyledProps<typeof Ark.Tabs.Root> {}
-interface JsxProps extends PreferRight<Ark.TabsProps, StyleProps> {}
+interface JsxProps extends Assign<Ark.TabsProps, StyleProps> {}
 
 export interface TabsProps extends JsxProps, TabsVariantProps {}
 

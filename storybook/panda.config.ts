@@ -1,4 +1,4 @@
-import { defaultConfig } from '@crepe-ui/shared'
+import { defaultConfig } from '@crepe-ui/preset-chakra'
 import { defineConfig } from '@pandacss/dev'
 
 export default defineConfig({

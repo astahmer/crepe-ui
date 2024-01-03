@@ -1,14 +1,14 @@
 import type { ComponentPropsWithoutRef } from "react";
 import { HTMLStyledProps, styled } from "@crepe-ui/styled-system/jsx";
 import { createStyleContext } from "./create-style-context";
-import { PreferRight } from "@crepe-ui/shared";
+import { Assign } from "@crepe-ui/styled-system/types";
 import { table, TableVariantProps } from "@crepe-ui/styled-system/recipes";
 
 const { withProvider, withContext } = createStyleContext(table);
 
 interface StyleProps extends HTMLStyledProps<"div"> {}
 interface JsxProps
-  extends PreferRight<ComponentPropsWithoutRef<"div">, StyleProps> {}
+  extends Assign<ComponentPropsWithoutRef<"div">, StyleProps> {}
 
 export interface TableProps extends JsxProps, TableVariantProps {}
 

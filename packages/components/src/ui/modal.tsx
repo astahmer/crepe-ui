@@ -6,7 +6,7 @@ import {
   closeButton,
 } from "@crepe-ui/styled-system/recipes";
 import { createStyleContext } from "./create-style-context";
-import { PreferRight } from "@crepe-ui/shared";
+import { Assign } from "@crepe-ui/styled-system/types";
 import { ForwardRefExoticComponent, forwardRef } from "react";
 import { DialogDescriptionProps } from "@ark-ui/react/dialog";
 
@@ -15,7 +15,7 @@ const { withProvider, withContext } = createStyleContext(modal);
 // export * from '@ark-ui/react/dialog';
 // export type ModalProps = Ark.DialogProps & ModalVariantProps;
 interface StyleProps extends HTMLStyledProps<typeof Ark.Dialog.Root> {}
-interface JsxProps extends PreferRight<Ark.DialogProps, StyleProps> {}
+interface JsxProps extends Assign<Ark.DialogProps, StyleProps> {}
 
 export interface ModalProps extends JsxProps, ModalVariantProps {}
 

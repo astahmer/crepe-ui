@@ -14,8 +14,6 @@ generation, which is used by the demo.
 
 ## TODO
 
-- rename to @crepe-ui-ui
-
 - update Ark-UI and remove all the pasted UseXXXProps types when v1 is released
 
 - create other frameworks implementation, only the React one is done

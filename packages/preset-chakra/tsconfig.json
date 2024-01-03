@@ -1,14 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "esModuleInterop": true, // TODO: does this mess anything up?
-    "noUnusedLocals": false,
-    "verbatimModuleSyntax": false,
-    "noEmit": true,
-    "resolveJsonModule": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"]
   },
-  "include": [
-    "src",
-  ]
+  "include": ["src"]
 }

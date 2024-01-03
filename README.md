@@ -1,9 +1,14 @@
-# crepe-ui, a Chakra UI port using Panda+Ark-UI
+# 🥞 crepe-ui, a Chakra UI port using Panda+Ark-UI
 
 - `pnpm i`
 - `pnpm dev`
 - `cd packages/components`
 - `pnpm demo`
+
+<img width="1711" alt="Screenshot 2024-01-03 at 23 48 32" src="https://github.com/astahmer/crepe-ui/assets/47224540/03ef5fa7-a3bc-40c0-9508-234c255e775e">
+<img width="1720" alt="Screenshot 2024-01-03 at 23 48 40" src="https://github.com/astahmer/crepe-ui/assets/47224540/e079155a-bdcf-4cc5-86d8-d72d4c311c9f">
+
+---
 
 We only need to watch/rebuild the `packages/preset-chakra` due to using
 [custom conditions](https://nodejs.org/api/packages.html#conditional-exports),

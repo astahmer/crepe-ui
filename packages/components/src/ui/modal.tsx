@@ -26,7 +26,7 @@ const DialogCloseTrigger = withContext(
   styled(Ark.Dialog.CloseTrigger, closeButton),
   "closeTrigger"
 );
-const DialogContainer = withContext(styled(Ark.Dialog.Container), "container");
+const DialogContainer = withContext(styled(Ark.Dialog.Positioner), "container");
 const DialogContent = withContext(styled(Ark.Dialog.Content), "content");
 
 const OverrideDialogDescription = forwardRef((props, ref) => {

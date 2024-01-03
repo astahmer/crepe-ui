@@ -23,12 +23,12 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@ark-ui/react": ">=0.14.0",
+    "@ark-ui/react": ">=1.0.0",
     "react": "^17.0.2 || ^18.2.0",
     "react-dom": "^17.0.2 || ^18.2.0"
   },
   "dependencies": {
-    "@ark-ui/react": "^0.15.0",
+    "@ark-ui/react": "^1.2.1",
     "@crepe-ui/preset-chakra": "workspace:^",
     "@crepe-ui/shared": "workspace:^",
     "@crepe-ui/styled-system": "workspace:^",
@@ -40,13 +40,13 @@
   "devDependencies": {
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
-    "@zag-js/avatar": "^0.26.0",
-    "@zag-js/checkbox": "^0.26.0",
-    "@zag-js/presence": "^0.26.0",
-    "@zag-js/react": "^0.26.0",
-    "@zag-js/select": "^0.26.0",
-    "@zag-js/switch": "^0.26.0",
-    "@zag-js/tabs": "^0.26.0",
+    "@zag-js/avatar": "^0.32.0",
+    "@zag-js/checkbox": "^0.32.0",
+    "@zag-js/presence": "^0.32.0",
+    "@zag-js/react": "^0.32.0",
+    "@zag-js/select": "^0.32.0",
+    "@zag-js/switch": "^0.32.0",
+    "@zag-js/tabs": "^0.32.0",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",

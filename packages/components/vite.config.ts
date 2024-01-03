@@ -3,7 +3,7 @@ import dts from 'vite-plugin-dts'
 import * as path from 'path'
 
 export default defineConfig({
-	plugins: [dts()],
+	plugins: [dts({ tsconfigPath: './tsconfig.build.json' })],
 	resolve: {
 		conditions: ['source'],
 		alias: {

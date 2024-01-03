@@ -1,4 +1,4 @@
-import { TokenCategory, Tokens } from '@pandacss/types'
+import { TokenCategory } from '@pandacss/types'
 import { traverse } from './traverse'
 import { dashCase } from './utils'
 
@@ -27,5 +27,5 @@ export const assignInlineVars = <TRecord extends TokenRecord>(userVars?: Partial
 		)
 	}
 
-	return vars
+	return vars as Record<string, any>
 }

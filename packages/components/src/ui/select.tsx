@@ -97,7 +97,7 @@ const SelectPositioner = withContext(
   "positioner"
 );
 const SelectTrigger = withContext(styled(Ark.Select.Trigger), "trigger");
-const SelectValue = withContext(styled(Ark.Select.Value), "value");
+const SelectValue = withContext(styled(Ark.Select.ValueText), "value");
 
 export const Select = Object.assign(SelectRoot, {
   Root: SelectRoot,

@@ -35,8 +35,9 @@ import { ToTokenRecord, assignInlineVars } from "@crepe-ui/shared";
 import { css } from "@crepe-ui/styled-system/css";
 import { Stack, Wrap, HStack, styled, Box } from "@crepe-ui/styled-system/jsx";
 import { button } from "@crepe-ui/styled-system/recipes";
-import { token } from "@crepe-ui/styled-system/tokens";
-import { Tokens } from "@pandacss/dev";
+import { Tokens, token } from "@crepe-ui/styled-system/tokens";
+
+type InlineTokens = ToTokenRecord<Tokens>;
 
 export const Sandbox = () => {
   // console.log(getColorSchemeVars());
@@ -66,9 +67,11 @@ export const Sandbox = () => {
         </div> */}
         <button className={button({ variant: "ghost" })}>btn ghost</button>
         <button className={button({ size: "lg" })}>btn lg</button>
-        <Button colorPalette="teal">btn teal</Button>
-        <Button colorPalette="teal" variant="ghost">
-          btn teal ghost
+        <Button colorPalette="yellow">btn yellow</Button>
+        <Button colorPalette="red">btn red</Button>
+        <Button colorPalette="purple">btn purple</Button>
+        <Button colorPalette="green" variant="ghost">
+          btn green ghost
         </Button>
         <Button colorPalette="blue" mr={3}>
           blue
@@ -76,7 +79,7 @@ export const Sandbox = () => {
         <Button
           colorPalette="blue"
           mr={3}
-          style={assignInlineVars<ToTokenRecord<Tokens>>({
+          style={assignInlineVars<InlineTokens>({
             colors: {
               "blue.500": "red",
               "blue.600": "green",
@@ -87,7 +90,7 @@ export const Sandbox = () => {
           assignInlineVars
         </Button>
 
-        <Badge colorPalette="green" variant="outline">
+        <Badge colorPalette="" variant="outline">
           Outline
         </Badge>
         <Badge colorPalette="purple" variant="solid">
@@ -100,7 +103,7 @@ export const Sandbox = () => {
         <SwitchExample />
         <TagExample />
         <AlertExample />
-        <AvatarExample />
+        {/* <AvatarExample /> */}
         <CheckboxDemo />
         <InputDemo />
         <FormControlDemo />
@@ -186,7 +189,7 @@ function BasicModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Modal open={isOpen} onClose={onClose}>
+      <Modal open={isOpen} onExitComplete={onClose}>
         <Button onClick={onOpen}>Open Modal</Button>
         <Portal>
           <Modal.Overlay />

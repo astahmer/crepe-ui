@@ -8,6 +8,7 @@ import {
   type ButtonVariantProps,
 } from "@crepe-ui/styled-system/recipes";
 import { ButtonIcon } from "./button-icon";
+import { JsxStyleProps } from "@crepe-ui/styled-system/types";
 
 // https://github.com/chakra-ui/chakra-ui/blob/f4b1ad66be1ada4b2728faef4c68a82a76f02532/packages/theme/src/components/button.ts
 // https://github.com/chakra-ui/chakra-ui/blob/f4b1ad66be1ada4b2728faef4c68a82a76f02532/packages/components/src/button/button.tsx#L60
@@ -17,9 +18,10 @@ const ButtonRoot = styled(ark.button, button);
 interface StyleProps extends ComponentProps<typeof ButtonRoot> {}
 
 export interface ButtonProps
-  extends StyleProps,
+  extends Omit<StyleProps, "colorPalette">,
     Omit<ButtonVariantProps, "colorPalette"> {
   leftIcon?: ReactNode;
+  colorPalette?: JsxStyleProps["colorPalette"];
 }
 
 /**

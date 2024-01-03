@@ -1,11 +1,4 @@
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "esModuleInterop": true, // TODO: does this mess anything up?
-    "noUnusedLocals": false,
-    "verbatimModuleSyntax": false,
-    "noEmit": true,
-    "resolveJsonModule": true
-  },
+  "extends": "../../tsconfig.build.json",
   "include": ["src"]
 }

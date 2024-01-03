@@ -1,18 +1,9 @@
 {
+  "extends": "./tsconfig.build.json",
   "compilerOptions": {
-    "strict": true,
-    "strictNullChecks": true,
     "moduleResolution": "Bundler",
     "module": "ESNext",
-    // "customConditions": ["source"],
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "jsx": "react-jsx",
-    "incremental": true,
-    "tsBuildInfoFile": ".tsbuildinfo",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "verbatimModuleSyntax": false,
-    "resolveJsonModule": true
+    "customConditions": ["source"]
   },
   "exclude": ["**/node_modules", "example-theme.ts", "old"]
 }

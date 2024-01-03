@@ -5,32 +5,32 @@
   "type": "module",
   "exports": {
     "./css": {
-      "types": "./styled-system/css/index.d.ts",
-      "require": "./styled-system/css/index.mjs",
-      "import": "./styled-system/css/index.mjs"
+      "types": "./dist/css/index.d.ts",
+      "require": "./dist/css/index.mjs",
+      "import": "./dist/css/index.mjs"
     },
     "./jsx": {
-      "types": "./styled-system/jsx/index.d.ts",
-      "require": "./styled-system/jsx/index.mjs",
-      "import": "./styled-system/jsx/index.mjs"
+      "types": "./dist/jsx/index.d.ts",
+      "require": "./dist/jsx/index.mjs",
+      "import": "./dist/jsx/index.mjs"
     },
     "./patterns": {
-      "types": "./styled-system/patterns/index.d.ts",
-      "require": "./styled-system/patterns/index.mjs",
-      "import": "./styled-system/patterns/index.mjs"
+      "types": "./dist/patterns/index.d.ts",
+      "require": "./dist/patterns/index.mjs",
+      "import": "./dist/patterns/index.mjs"
     },
     "./recipes": {
-      "types": "./styled-system/recipes/index.d.ts",
-      "require": "./styled-system/recipes/index.mjs",
-      "import": "./styled-system/recipes/index.mjs"
+      "types": "./dist/recipes/index.d.ts",
+      "require": "./dist/recipes/index.mjs",
+      "import": "./dist/recipes/index.mjs"
     },
     "./tokens": {
-      "types": "./styled-system/tokens/index.d.ts",
-      "require": "./styled-system/tokens/index.mjs",
-      "import": "./styled-system/tokens/index.mjs"
+      "types": "./dist/tokens/index.d.ts",
+      "require": "./dist/tokens/index.mjs",
+      "import": "./dist/tokens/index.mjs"
     },
     "./types": {
-      "types": "./styled-system/types/index.d.ts"
+      "types": "./dist/types/index.d.ts"
     }
   },
   "scripts": {

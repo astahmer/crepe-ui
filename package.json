@@ -6,10 +6,12 @@
     "build": "pnpm -r --filter=./packages/** build",
     "fmt": "biome format . --write",
     "lint": "biome lint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "release": "changeset publish"
   },
   "devDependencies": {
     "@biomejs/biome": "1.4.1",
+    "@changesets/cli": "^2.27.1",
     "typescript": "^5.2.2"
   }
 }

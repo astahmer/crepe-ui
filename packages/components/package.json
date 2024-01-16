@@ -32,7 +32,7 @@
     "@crepe-ui/preset-chakra": "workspace:^",
     "@crepe-ui/shared": "workspace:^",
     "@crepe-ui/styled-system": "workspace:^",
-    "@pandacss/dev": "^0.24.1",
+    "@pandacss/dev": "^0.27.1",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

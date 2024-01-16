@@ -6,7 +6,7 @@ export default defineConfig({
 	// staticCss: defaultConfig.staticCss,
 	preflight: false,
 	include: ['./stories/**/*.{js,jsx,ts,tsx}'],
-	outdir: 'node_modules/@crepe-ui/styled-system/styled-system',
+	outdir: 'styled-system',
 	importMap: '@crepe-ui/styled-system',
 	jsxFramework: 'react',
 

@@ -19,7 +19,7 @@
     "build": "tsup"
   },
   "devDependencies": {
-    "@pandacss/types": "^0.24.1",
+    "@pandacss/types": "^0.26.2",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2"
   },

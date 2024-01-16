@@ -11,11 +11,10 @@ export default defineConfig({
 	// Whether to use css reset
 	preflight: false,
 
-	// The output directory for your css system
+	outdir: 'dist',
 	// using the same module specifier `@crepe-ui/styled-system` acrosss all packages
 	// and by marking it as `external` in the `tsup.config.ts`
 	// will make all packages use the same `styled-system` runtime
-	outdir: 'dist',
 	importMap: '@crepe-ui/styled-system',
 
 	// The JSX framework to use

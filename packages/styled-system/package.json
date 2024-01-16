@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@crepe-ui/preset-chakra": "workspace:^",
-    "@pandacss/dev": "^0.24.1",
+    "@pandacss/dev": "^0.27.1",
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14"
   },

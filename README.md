@@ -1,3 +1,9 @@
+repo archived cause Chakra-ui V3 is very close and now uses the same styling API as Panda, which means you can just pick recipe/slot recipes from there and almost copy/paste components !
+-> Chakra imports recipes using `useRecipe`, with Panda those will be generated in `styled-system/recipes`
+
+ex: button recipe https://github.com/chakra-ui/chakra-ui/blob/1195171b9ec8b351daf7d36be3f012ccf63ba61d/packages/react/src/theme/recipes/button.ts
+button component https://github.com/chakra-ui/chakra-ui/blob/1195171b9ec8b351daf7d36be3f012ccf63ba61d/packages/react/src/components/button/button.tsx
+
 # 🥞 crepe-ui, a Chakra UI port using Panda+Ark-UI
 
 - `pnpm i`
